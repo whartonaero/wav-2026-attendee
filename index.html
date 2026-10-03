@@ -26,6 +26,21 @@
   table.styled { width:100%; border-collapse:collapse; }
   table.styled th { text-align:left; padding:12px 16px; background:#10203f; color:#fff; font-family:'JetBrains Mono',monospace; font-size:14px; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; }
   table.styled td { padding:14px 16px; border-bottom:1px solid rgba(18,32,63,0.12); }
+  .ag-day { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:6px 24px; padding-bottom:12px; border-bottom:2px solid #12203f; }
+  .ag-day h3 { margin:0; font-family:'Inter',sans-serif; font-weight:800; font-size:20px; color:#12203f; }
+  .ag-day span { font-family:'JetBrains Mono',monospace; font-size:14px; color:rgba(18,32,63,0.65); }
+  .ag-row { display:grid; grid-template-columns:170px 1fr; gap:6px 24px; padding:22px 0; border-bottom:1px solid rgba(18,32,63,0.1); }
+  .ag-time { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:14px; color:#c81e3f; white-space:nowrap; }
+  .ag-title { font-weight:700; font-size:16px; line-height:1.35; color:#12203f; }
+  .ag-row.minor .ag-title { font-weight:600; }
+  .ag-desc { margin:8px 0 0; font-size:14.5px; line-height:1.65; color:rgba(18,32,63,0.75); max-width:820px; }
+  .ag-people { margin:8px 0 0; font-size:14px; line-height:1.55; color:rgba(18,32,63,0.65); max-width:820px; }
+  .ag-people strong { color:#12203f; font-weight:600; }
+  .ag-tag { display:inline-block; margin-left:10px; padding:2px 8px; border:1px solid #c81e3f; border-radius:3px; font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#c81e3f; vertical-align:middle; }
+  .ag-breakouts { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:14px; }
+  .ag-card { background:#f5efe4; border-radius:10px; padding:20px; }
+  .ag-card .ag-title { font-size:15.5px; }
+  @media (max-width:640px) { .ag-row { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -38,7 +53,8 @@
   <div style="display:flex;align-items:center;gap:clamp(10px,2vw,26px);flex-wrap:wrap;">
     <a href="#why" class="nav-link">Why Attend</a>
     <a href="#theme" class="nav-link">Theme</a>
-    <a href="#speakers" class="nav-link">Speakers</a>
+    <a href="#agenda" class="nav-link">Agenda</a>
+    <a href="#speakers" class="nav-link">Past Speakers</a>
     <a href="#attendees" class="nav-link">Attendees</a>
     <a href="https://luma.com/c4bu45v8" target="_blank" rel="noopener" style="background:#c81e3f;color:#fff;padding:10px 20px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;">RSVP</a>
   </div>
@@ -106,73 +122,184 @@
     <p style="max-width:820px;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.65);margin:0 0 20px;">Made in China 2025 — China’s industrial strategy that provided a foundation for its rise — is now being integrated into China’s broader 15th Five-Year Plan (2026–2030). China’s industrial strategy now touches almost every major sector in the economy and their underlying supply chains and advances technological self-reliance.</p>
     <p style="max-width:820px;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.65);margin:0 0 20px;">China has moved beyond simply chasing American innovation. It is pursuing a different theory of power, one that places production, scale, and control of critical inputs at the center of its national strategy. China has recognized to a greater degree that controlling lower level supply chain inputs controls production scale up and capacity. Our innovation capacity has suffered along with manufacturing moving offshore.</p>
     <p style="max-width:820px;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.65);margin:0 0 20px;">But America is a quick study. Increasingly Congress is calling for and approving budget allocation to shore up our weakened capabilities in the sourcing and processing of raw materials, rare earths and the lowest levels of supply chains. But, public capital is insufficient. America’s innovation and economic prowess is unmatched; we need to tap into these strengths and harness private capital as only the American system can.</p>
-    <p style="max-width:820px;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.65);margin:0 0 44px;">Wharton Aerospace Ventures theme this year places these issues at center stage. We not only bring experts, founders, investors addressing these issues, but also have added a Market Crafting layer, putting innovations in industrial policy at the heart of all our discussions.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#c81e3f;margin-bottom:14px;">01</div>
-        <div style="font-weight:700;font-size:16px;color:#fff;line-height:1.35;">Opening Capstone Panel: The U.S. vs. China and the Battle for Global Supply Supremacy</div>
+    <p style="max-width:820px;font-size:16px;line-height:1.65;color:rgba(255,255,255,0.65);margin:0;">Wharton Aerospace Ventures theme this year places these issues at center stage. We not only bring experts, founders, investors addressing these issues, but also have added a Market Crafting layer, putting innovations in industrial policy at the heart of all our discussions.</p>
+  </div>
+</section>
+
+<section id="agenda" style="background:#fff;">
+  <div class="wrap">
+    <div class="eyebrow">Agenda</div>
+
+    <div class="ag-day" style="margin-top:24px;"><h3>Wednesday, October 14 · Pitch Night</h3><span>~150 attendees</span></div>
+
+    <div class="ag-row">
+      <div class="ag-time">4:00–5:00 PM</div>
+      <div>
+        <div class="ag-title">VC Panel: Venturing in Defense — Where Is It Going?</div>
+        <p class="ag-desc">Where is the fast-evolving defense technology landscape going? Leading defense tech investors explore strategic investment areas in the next industrial base, while we highlight the rise of startups rebuilding America’s industrial strength through dual-use innovation.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#c81e3f;margin-bottom:14px;">02</div>
-        <div style="font-weight:700;font-size:16px;color:#fff;line-height:1.35;">Cracks in the Supply Chain</div>
+    </div>
+    <div class="ag-row" style="margin-bottom:56px;">
+      <div class="ag-time">5:00–8:00 PM</div>
+      <div>
+        <div class="ag-title">Defense Tech Showcase &amp; Networking Dinner</div>
+        <p class="ag-desc">10–12 defense tech companies showcase their company and wares, with deep tech and defense tech demos, followed by a networking dinner for attendees.</p>
+        <p class="ag-people">Rooftop Reception Venue</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#c81e3f;margin-bottom:14px;">03</div>
-        <div style="font-weight:700;font-size:16px;color:#fff;line-height:1.35;">AI Infrastructure in the Age of Great Power Competition — Compute, Energy, and Critical Minerals as Strategic Assets</div>
+    </div>
+
+    <div class="ag-day"><h3>Thursday, October 15 · Main Conference</h3><span>Taft Law, 200 Mass Ave NW · 250 max</span></div>
+
+    <div class="ag-row minor">
+      <div class="ag-time">8:00–9:00 AM</div>
+      <div>
+        <div class="ag-title">Arrival &amp; Networking Breakfast</div>
+        <p class="ag-people">2nd Floor · coffee, tea &amp; continental breakfast</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#c81e3f;margin-bottom:14px;">04</div>
-        <div style="font-weight:700;font-size:16px;color:#fff;line-height:1.35;">A Comparative Look at Industrial Policies Enabling Manufacturing — Asia, Europe, America</div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">9:00–9:10 AM</div>
+      <div>
+        <div class="ag-title">Opening Remarks</div>
+        <p class="ag-desc">An overview of the event, a recap of the prior evening’s startup pitches and VC panel, and an introduction to the industrial policy tabletops.</p>
+        <p class="ag-people">Ellen Chang, Michael Langman</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#c81e3f;margin-bottom:14px;">05</div>
-        <div style="font-weight:700;font-size:16px;color:#fff;line-height:1.35;">Concrete and Capital: Funding the Foundation of the Defense Industrial Base</div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">9:10–9:30 AM</div>
+      <div>
+        <div class="ag-title">Opening Fireside Chat: Dan Magy<span class="ag-tag">Keynote</span></div>
+        <p class="ag-desc">A candid conversation on building defense technology for an era defined by speed, adaptability, and resilient supply chains, with the Founder &amp; CEO of Firestorm Labs, whose factory-in-a-box solution just closed an $82M round.</p>
+        <p class="ag-people"><strong>Moderator</strong> Heather Richman</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#c81e3f;margin-bottom:14px;">06</div>
-        <div style="font-weight:700;font-size:16px;color:#fff;line-height:1.35;">Scaling Next-Gen Munitions</div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">9:30–9:50 AM</div>
+      <div>
+        <div class="ag-title">From the Front</div>
+        <p class="ag-people"><strong>Moderator</strong> Ellen Chang</p>
+        <p class="ag-people"><strong>Speakers</strong> Col. Jason Kim, Christian Koschil (American Institute in Taiwan)</p>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:10px;padding:24px;">
-        <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#c81e3f;margin-bottom:14px;">07</div>
-        <div style="font-weight:700;font-size:16px;color:#fff;line-height:1.35;">$1T Private Capital for the National Interest — Policy Tabletop Outbrief</div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">9:50–10:40 AM</div>
+      <div>
+        <div class="ag-title">Opening Capstone Panel: The U.S. vs. China and the Battle for Global Production Supremacy</div>
+        <p class="ag-desc">The global geopolitical landscape is defined by a fundamental clash of economic architectures. With the formal implementation of China’s 15th Five-Year Plan (2026–2030), Beijing has pivoted from targeted sector subsidies to a system-wide, state-directed strategy designed to secure absolute technological self-reliance and command “new quality productive forces.” In contrast, the U.S. trade and fiscal strategies seem haphazard. This panel of China, industrial base, and U.S. policy experts will discuss the U.S. market-led, incentive-driven approach contrasted with China’s pervasive state-orchestrated model, exploring how we might create alignment to ensure we secure our economic capacity.</p>
+        <p class="ag-people"><strong>Moderator</strong> Dan Shneiderman</p>
+        <p class="ag-people"><strong>Panelists</strong> Regina Abrami (Wharton), Andy Magliochette (DASN, Navy), Ron Epstein (Bank of America), John Gallagher (Dept. of War), Andrew King (Bastille Ventures)</p>
       </div>
+    </div>
+
+    <div class="ag-row minor">
+      <div class="ag-time">10:40–10:50 AM</div>
+      <div><div class="ag-title">Break</div></div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">10:50–11:30 AM</div>
+      <div>
+        <div class="ag-title">Cracks in the Supply Chain</div>
+        <p class="ag-desc">Cracks in the global supply chain are getting harder to ignore, from critical materials and semiconductors to logistics bottlenecks and labor shortages. This panel explores the most urgent vulnerabilities and energizes a discussion on how data, re-shoring, dual-use manufacturing, and new public–private collaboration can build resilience.</p>
+        <p class="ag-people"><strong>Moderator</strong> Riley Thomas</p>
+        <p class="ag-people"><strong>Panelists</strong> Jeff Frankston (Dept. of War, IBAS), Ross Pedersen (Neros Technologies), Jisoo Chung (HL Mando), Nikhil Kalathil (CMU)</p>
+      </div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">11:30 AM–12:15 PM</div>
+      <div>
+        <div class="ag-title">AI Infrastructure in the Age of Great Power Competition — Compute, Energy, and Critical Minerals as Strategic Assets</div>
+        <p class="ag-desc">AI has sparked a rapidly intensifying global economic competition over the infrastructure and power for the technology itself. This panel examines the emerging geopolitical and industrial dynamics shaping the AI infrastructure race.</p>
+        <p class="ag-people"><strong>Moderator</strong> Andrew Stiles</p>
+        <p class="ag-people"><strong>Panelists</strong> Chris Kong (Paperjet Ventures), Tom Kruger (AKIN), Richard Steffens (Steffens Provision Inc), Maggie Gray (Shield Capital)</p>
+      </div>
+    </div>
+
+    <div class="ag-row minor">
+      <div class="ag-time">12:15–1:15 PM</div>
+      <div>
+        <div class="ag-title">Lunch + Policy Tabletop Kickoff</div>
+        <p class="ag-people">15–20 conference attendees gather to spitball ideas for the tabletop.</p>
+      </div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">1:15–2:15 PM</div>
+      <div>
+        <div class="ag-title">Breakouts <span style="font-weight:500;color:rgba(18,32,63,0.65);">· three concurrent sessions</span></div>
+        <div class="ag-breakouts">
+          <div class="ag-card">
+            <div class="ag-title">Policy Tabletop: Crowding In Capital</div>
+            <p class="ag-desc">Financing U.S. reindustrialization using America’s greatest instrument of power — its economic one. We’ll discuss the journey of crafting policies that incentivize us to deploy capital in longer-term, more capital-intensive sectors in order to secure our future.</p>
+            <p class="ag-people">Ivan Shyr (CapZone), Jen Cash (Capitol Advisory), Hebert Limas (Hudson), Leigh Anne Miller (Ripley Decision Advantage), Steve McKee (OSW)</p>
+          </div>
+          <div class="ag-card">
+            <div class="ag-title">What Are PAEs?</div>
+            <p class="ag-desc">Every major weapon system passes through a Program Acquisition Executive (PAE). Under recent acquisition reforms, PAEs now hold greater authority, shorter chains of command, and direct accountability for cost, schedule, and performance. How do they work?</p>
+            <p class="ag-people">Michael Stewart (N86U), Shelly Stoneman (Stone Point Solutions), Pete Modigliani (TBD)</p>
+          </div>
+          <div class="ag-card">
+            <div class="ag-title">Scaling Manufacturing</div>
+            <p class="ag-desc">Rebuilding America’s industrial base will take more than restoring what was lost. It requires new approaches to how we build, and rethinking supply chains and input materials.</p>
+            <p class="ag-people">Garuth Archan (Ironstead), Mingu Khan (Arris Technologies), Dale Ferrell (Hyundai Robotics), Devon (Bravo Ordnance)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">2:15–3:00 PM</div>
+      <div>
+        <div class="ag-title">A Comparative Look at Industrial Policies Enabling Manufacturing — Asia, Europe, America</div>
+        <p class="ag-desc">The U.S. and its allies are using different blends of public finance, industrial policy, and investment controls to strengthen domestic capabilities, reduce dependence on China, and gain long-term strategic advantage.</p>
+        <p class="ag-people"><strong>Moderator</strong> Eric Lo</p>
+        <p class="ag-people"><strong>Panelists</strong> Bogaun Chen (ITRI-Taiwan), Vilijus Samuila (Lithuania), Michael Stroud (Taft)</p>
+      </div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">Time TBC</div>
+      <div>
+        <div class="ag-title">Concrete and Capital: Funding the Foundation of the Defense Industrial Base</div>
+        <p class="ag-desc">Our manufacturing ambitions depend on reliable infrastructure—energy, logistics, utilities, and buildings that make production possible. However, the fastest growing defense companies are often the ones least able to fund their physical expansion. Additionally, the ones that do are either paying for real estate with expensive capital or carrying it on balance sheet inefficiently. Startup financing and infrastructure experts discuss where the chokepoints actually are and what institutional capital needs to see to be a complementary financing partner.</p>
+        <p class="ag-people"><strong>Moderator</strong> Michael Barclift</p>
+        <p class="ag-people"><strong>Panelists</strong> Justin Sperling (Cadry), Susan Gray (Argo), David Willard (Nooks), Rebecca Del Palazzo (DIU)</p>
+      </div>
+    </div>
+
+    <div class="ag-row">
+      <div class="ag-time">3:00–3:45 PM</div>
+      <div>
+        <div class="ag-title">Scaling Next-Gen Munitions</div>
+        <p class="ag-desc">The modern battlefield demands high-volume, affordable precision to counter attritable systems. Defense startups and primes are innovating using commercial electronics and automotive-style mass production in order to build low-cost weapons that are also lethal. Our panel will discuss the challenges of designing, sourcing parts, and manufacturing low-cost munitions to deploy affordable lethality at scale.</p>
+        <p class="ag-people"><strong>Moderator</strong> Dak Hardwick</p>
+        <p class="ag-people"><strong>Panelists</strong> Skip Arny (AEVEX), James Owen (Fortus Federal), Paul Tilghman (Voyager Space Technologies), Maria Proestou (DASN Budget Policy, Navy), Chad Lemond (Northrop Grumman)</p>
+      </div>
+    </div>
+
+    <div class="ag-row minor">
+      <div class="ag-time">3:45 PM</div>
+      <div>
+        <div class="ag-title">Wrap-Up</div>
+        <p class="ag-people">Ellen Chang (CapZone Group), Michael Langman — Founders &amp; Co-Presidents, Wharton Aerospace</p>
+      </div>
+    </div>
+
+    <div class="ag-row minor">
+      <div class="ag-time">4:30–6:00 PM</div>
+      <div><div class="ag-title">Post-Event Informal Happy Hour</div></div>
     </div>
   </div>
 </section>
 
-<section id="speakers" style="background:#fff;">
+<section id="speakers" style="background:#f5efe4;">
   <div class="wrap">
-    <div class="eyebrow">Keynote &amp; Speakers</div>
-    <div style="background:#10203f;border-radius:12px;padding:clamp(28px,4vw,44px);color:#fff;display:flex;flex-direction:column;gap:8px;margin-bottom:48px;">
-      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:#e2687e;">2026 Keynote</div>
-      <div style="font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(24px,3vw,32px);">Dan Magy</div>
-      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;color:rgba(255,255,255,0.75);">Founder &amp; CEO, Firestorm Labs</div>
-      <div style="font-size:14.5px;color:rgba(255,255,255,0.6);max-width:680px;margin-top:6px;line-height:1.55;">Firestorm's factory-in-a-box solution just closed an $82M round. Join Dan for a candid conversation on building defense technology for an era defined by speed, adaptability, and resilient supply chains.</div>
-    </div>
-
-    <div style="font-family:'Inter',sans-serif;font-weight:700;font-size:17px;color:#12203f;margin:0 0 20px;">2026 Speakers (Partial)</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px 32px;margin-bottom:52px;">
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">John Gallagher</strong> · Senior Advisor &amp; Deputy Chief of Staff to the Deputy Secretary of War</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Col. Jason Kim</strong> · Security &amp; Cooperation Officer, American Institute in Taiwan</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Regina Abrami</strong> · Chang Sun Term Professor &amp; Faculty Director, Global Program &amp; Strategic Initiatives, Wharton / Lauder Institute</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Ron Epstein</strong> · Managing Director, Americas Equity Research, Bank of America (Aerospace / Defense / Multi-Industrials)</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Mark Choi</strong> · Senior Associate, U.S. International Development Finance Corporation</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Jisoo Chung</strong> · Principal, Higher Life Ventures</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Jeff Frankston</strong> · Acting Deputy Assistant Secretary of War, Department of War, Industrial Base Resilience</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Mikhail Grinberg</strong> · Senior Partner, Renaissance Strategic Advisors</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Andy Magliochette</strong> · Deputy Assistant Secretary of the Navy for the Defense Industrial Base</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">LTC Sam Penniman</strong> · HQ ASALT Director, Army FUZE</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Jake Windle</strong> · Investor, Harpoon Ventures</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Justin Sperling</strong> · Founder &amp; Managing Partner, Cadry</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Alex Lautzenheiser</strong> · Principal, UP Partners</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Sarah Istel</strong> · Managing Director, Cerberus Ventures</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Dr. Maggie Gray</strong> · Vice President, Shield Capital</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Andrew King</strong> · Founder &amp; General Partner, Bastille Ventures</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Maria Proestou</strong> · DASN Budget &amp; Policy, U.S. Navy</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">Paul Tilghman</strong> · CTO, Voyager Space Technologies</div>
-      <div style="font-size:14px;color:rgba(18,32,63,0.75);padding:9px 0;border-bottom:1px solid rgba(18,32,63,0.1);"><strong style="color:#12203f;">James Owen</strong> · Founder &amp; CEO, Fortus Federal</div>
-    </div>
-
+    <div class="eyebrow">Past Speakers</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;margin-bottom:16px;">
       <div>
         <div style="font-family:'Inter',sans-serif;font-weight:700;font-size:17px;color:#12203f;margin:0 0 16px;">Past Keynotes</div>
@@ -201,7 +328,7 @@
   </div>
 </section>
 
-<section id="attendees" style="background:#f5efe4;padding-left:0;padding-right:0;">
+<section id="attendees" style="background:#fff;padding-left:0;padding-right:0;">
   <div class="wrap" style="padding:0 clamp(20px,5vw,64px);">
     <div class="eyebrow">Who Will Be In The Room</div>
     <p style="max-width:820px;font-size:16px;line-height:1.6;color:rgba(18,32,63,0.75);margin:0 0 40px;">Executives, investors, founders, and policymakers spanning the top titans of the A&amp;D industry, the venture and startup ecosystem, policy, and government.</p>
@@ -242,45 +369,27 @@
   </div>
 </section>
 
-<section id="overview" style="background:#fff;">
+<section id="photos" style="background:#f5efe4;">
   <div class="wrap">
-    <div class="eyebrow">Conference Overview</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:48px;align-items:start;">
-      <div>
-        <table class="styled">
-          <thead><tr><th>Day</th><th>Format</th></tr></thead>
-          <tbody>
-            <tr>
-              <td style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#12203f;white-space:nowrap;background:#f5efe4;">Wed Oct 14 (evening)</td>
-              <td style="font-size:14px;color:rgba(18,32,63,0.75);background:#f5efe4;">VC panel, defense tech showcase, networking dinner (~150 attendees)</td>
-            </tr>
-            <tr>
-              <td style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;color:#12203f;white-space:nowrap;background:#f5efe4;">Thu Oct 15 (full day)</td>
-              <td style="font-size:14px;color:rgba(18,32,63,0.75);background:#f5efe4;">8 panels/fireside chats, opening keynote, policy tabletop, wrap-up happy hour (~250 attendees)</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
-        <img src="https://lh3.googleusercontent.com/d/1nSjMfHeRepIfXlB6cisP_UhFqUDbtSMm" alt="Attendees networking during the reception" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
-        <img src="https://lh3.googleusercontent.com/d/1fdYXkmKnv9ssoItIAF6TRZYkrc_YqX3D" alt="Founder demonstrating defense hardware to attendees" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
-        <img src="https://lh3.googleusercontent.com/d/1iYRuWb_P7yXhXyOmLwcjqgPjJjH5yMeY" alt="Panel discussion to a full room" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
-        <img src="https://lh3.googleusercontent.com/d/1HRO6nImZOR_FTJvo61pAYqWqAKVjUnO3" alt="Attendees networking at the conference" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
-        <img src="https://lh3.googleusercontent.com/d/1roEWSg4vCR6IV9tvOOUk0jWlT9m7rS4y" alt="Speaker presenting to a seated audience" style="width:100%;height:200px;object-fit:cover;border-radius:8px;">
-      </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+      <img src="https://lh3.googleusercontent.com/d/1nSjMfHeRepIfXlB6cisP_UhFqUDbtSMm" alt="Attendees networking during the reception" style="width:100%;height:220px;object-fit:cover;border-radius:8px;">
+      <img src="https://lh3.googleusercontent.com/d/1fdYXkmKnv9ssoItIAF6TRZYkrc_YqX3D" alt="Founder demonstrating defense hardware to attendees" style="width:100%;height:220px;object-fit:cover;border-radius:8px;">
+      <img src="https://lh3.googleusercontent.com/d/1iYRuWb_P7yXhXyOmLwcjqgPjJjH5yMeY" alt="Panel discussion to a full room" style="width:100%;height:220px;object-fit:cover;border-radius:8px;">
+      <img src="https://lh3.googleusercontent.com/d/1HRO6nImZOR_FTJvo61pAYqWqAKVjUnO3" alt="Attendees networking at the conference" style="width:100%;height:220px;object-fit:cover;border-radius:8px;">
+      <img src="https://lh3.googleusercontent.com/d/1roEWSg4vCR6IV9tvOOUk0jWlT9m7rS4y" alt="Speaker presenting to a seated audience" style="width:100%;height:220px;object-fit:cover;border-radius:8px;">
     </div>
   </div>
 </section>
 
-<section id="sponsors" style="background:#f5efe4;">
+<section id="sponsors" style="background:#fff;">
   <div class="wrap">
     <div class="eyebrow">Our Partners</div>
     <p style="font-size:15.5px;color:rgba(18,32,63,0.65);margin:0 0 36px;">This gathering is made possible with the support of these partner organizations.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
-      <div style="background:#fff;border:1px solid rgba(18,32,63,0.1);border-radius:10px;padding:28px;display:flex;align-items:center;justify-content:center;height:100px;">
+      <div style="background:#f5efe4;border:1px solid rgba(18,32,63,0.1);border-radius:10px;padding:28px;display:flex;align-items:center;justify-content:center;height:100px;">
         <img src="https://lh3.googleusercontent.com/d/1t2zrjtGv3QJPcuQ94v9UKDQSgGoZz3wQ" alt="Voyager Technologies logo" style="max-height:48px;max-width:100%;object-fit:contain;">
       </div>
-      <div style="background:#fff;border:1px solid rgba(18,32,63,0.1);border-radius:10px;padding:28px;display:flex;align-items:center;justify-content:center;height:100px;">
+      <div style="background:#f5efe4;border:1px solid rgba(18,32,63,0.1);border-radius:10px;padding:28px;display:flex;align-items:center;justify-content:center;height:100px;">
         <img src="https://lh3.googleusercontent.com/d/1cIYj1nnZwvKV6Fw13mWttVg0mw41KIOR" alt="Taft Law logo" style="max-height:48px;max-width:100%;object-fit:contain;">
       </div>
     </div>
