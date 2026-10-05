@@ -29,7 +29,7 @@
   .ag-day { display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:6px 24px; padding-bottom:12px; border-bottom:2px solid #12203f; }
   .ag-day h3 { margin:0; font-family:'Inter',sans-serif; font-weight:800; font-size:20px; color:#12203f; }
   .ag-day span { font-family:'JetBrains Mono',monospace; font-size:14px; color:rgba(18,32,63,0.65); }
-  .ag-row { display:grid; grid-template-columns:170px 1fr; gap:6px 24px; padding:22px 0; border-bottom:1px solid rgba(18,32,63,0.1); }
+  .ag-row { display:grid; grid-template-columns:170px minmax(0,1fr); gap:6px 24px; padding:22px 0; border-bottom:1px solid rgba(18,32,63,0.1); }
   .ag-time { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:14px; color:#c81e3f; white-space:nowrap; }
   .ag-title { font-weight:700; font-size:16px; line-height:1.35; color:#12203f; }
   .ag-row.minor .ag-title { font-weight:600; }
@@ -40,7 +40,11 @@
   .ag-breakouts { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:14px; }
   .ag-card { background:#f5efe4; border-radius:10px; padding:20px; }
   .ag-card .ag-title { font-size:15.5px; }
-  @media (max-width:640px) { .ag-row { grid-template-columns:1fr; } }
+  .ag-list { list-style:none; margin:12px 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:10px 24px; max-width:900px; }
+  .ag-list li { font-size:14px; line-height:1.5; color:rgba(18,32,63,0.65); }
+  .ag-list strong { display:block; color:#12203f; font-weight:600; }
+  .ag-role { display:block; font-family:'JetBrains Mono',monospace; font-size:14px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#c81e3f; }
+  @media (max-width:640px) { .ag-row { grid-template-columns:minmax(0,1fr); } }
 </style>
 </head>
 <body>
@@ -159,9 +163,10 @@
       <div>
         <div class="ag-title">VC Panel: Venturing in Defense — Where Is It Going?</div>
         <p class="ag-desc">Where is the fast-evolving defense technology landscape going? Leading defense tech investors explore strategic investment areas in the next industrial base, while we highlight the rise of startups rebuilding America’s industrial strength through dual-use innovation.</p>
+        <ul class="ag-list"><li><strong>Jake Windle</strong> Investor, Harpoon</li><li><strong>Alex Garcia Lautzenheiser</strong> Investor, UP Partners</li><li><strong>Sarah Istel</strong> Managing Director, Cerberus Ventures</li><li><strong>Sam Spencer-Pittman</strong> Director, Army FUZE</li><li><strong>Mikhail Grinberg</strong> Senior Partner, Renaissance Strategic Advisors</li><li><strong>Margaret Roth</strong> Principal, Squadra Ventures</li></ul>
       </div>
     </div>
-    <div class="ag-row" style="margin-bottom:56px;">
+    <div class="ag-row">
       <div class="ag-time">5:00–8:00 PM</div>
       <div>
         <div class="ag-title">Defense Tech Showcase &amp; Networking Dinner</div>
@@ -170,7 +175,7 @@
       </div>
     </div>
 
-    <div class="ag-day"><h3>Thursday, October 15 · Main Conference</h3></div>
+    <div class="ag-day" style="margin-top:56px;"><h3>Thursday, October 15 · Main Conference</h3></div>
 
     <div class="ag-row minor">
       <div class="ag-time">8:00–8:45 AM</div>
@@ -179,7 +184,6 @@
         <p class="ag-people">2nd Floor · coffee, tea &amp; continental breakfast</p>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">8:45–9:00 AM</div>
       <div>
@@ -188,67 +192,57 @@
         <p class="ag-people">Ellen Chang, Michael Langman</p>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">9:00–9:20 AM</div>
       <div>
         <div class="ag-title">Opening Fireside Chat: Dan Magy<span class="ag-tag">Keynote</span></div>
-        <p class="ag-desc">A candid conversation on building defense technology for an era defined by speed, adaptability, and resilient supply chains, with the Founder &amp; CEO of Firestorm Labs, whose factory-in-a-box solution just closed an $82M round.</p>
-        <p class="ag-people"><strong>Moderator</strong> Heather Richman</p>
+        <p class="ag-desc">A candid conversation on building defense technology for an era defined by speed, adaptability, and resilient supply chains. Firestorm’s factory-in-a-box solution just closed an $82M round.</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Heather Richman</strong></li><li><strong>Dan Magy</strong> Founder &amp; CEO, Firestorm Labs</li></ul>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">9:20–9:50 AM</div>
       <div>
         <div class="ag-title">From the Front<span class="ag-tag">Keynote</span></div>
-        <p class="ag-people"><strong>Moderator</strong> Ellen Chang</p>
-        <p class="ag-people"><strong>Speakers</strong> Col. Jason Kim, Christian Koschil (American Institute in Taiwan)</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Ellen Chang</strong></li><li><strong>Col. Jason Kim</strong> Security Cooperation Officer, American Institute in Taiwan</li><li><strong>Christian Koschil</strong> American Institute in Taiwan</li></ul>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">9:50–10:35 AM</div>
       <div>
         <div class="ag-title">Opening Capstone Panel: The U.S. vs. China and the Battle for Global Production Supremacy</div>
         <p class="ag-desc">The global geopolitical landscape is defined by a fundamental clash of economic architectures. With the formal implementation of China’s 15th Five-Year Plan (2026–2030), Beijing has pivoted from targeted sector subsidies to a system-wide, state-directed strategy designed to secure absolute technological self-reliance and command “new quality productive forces.” In contrast, the U.S. trade and fiscal strategies seem haphazard. This panel of China, industrial base, and U.S. policy experts will discuss the U.S. market-led, incentive-driven approach contrasted with China’s pervasive state-orchestrated model, exploring how we might create alignment to ensure we secure our economic capacity.</p>
-        <p class="ag-people"><strong>Moderator</strong> Dan Shneiderman</p>
-        <p class="ag-people"><strong>Panelists</strong> Regina Abrami (Wharton), Andy Magliochette (DASN, Navy), Ron Epstein (Bank of America), John Gallagher (Dept. of War), Andrew King (Bastille Ventures)</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Daniel Schneiderman</strong> Director of Global Policy Programs, Penn Washington</li><li><strong>Regina Abrami</strong> Chang Sun Term Professor &amp; Faculty Director, Global Program, Lauder Institute of Management &amp; International Studies, University of Pennsylvania</li><li><strong>Andy Magliochette</strong> DASN Naval Industrial Base, U.S. Navy</li><li><strong>Ron Epstein</strong> Managing Director, Bank of America</li><li><strong>John Gallagher</strong> Senior Advisor &amp; Deputy Chief of Staff to the Deputy Secretary of War</li><li><strong>Andrew King</strong> Founder, Managing Partner, Bastille Ventures</li></ul>
       </div>
     </div>
-
     <div class="ag-row minor">
       <div class="ag-time">10:35–10:50 AM</div>
-      <div><div class="ag-title">Break</div></div>
+      <div>
+        <div class="ag-title">Break</div>
+      </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">10:50–11:30 AM</div>
       <div>
         <div class="ag-title">Cracks in the Supply Chain</div>
         <p class="ag-desc">Cracks in the global supply chain are getting harder to ignore, from critical materials and semiconductors to logistics bottlenecks and labor shortages. This panel explores the most urgent vulnerabilities and energizes a discussion on how data, re-shoring, dual-use manufacturing, and new public–private collaboration can build resilience.</p>
-        <p class="ag-people"><strong>Moderator</strong> Riley Thomas</p>
-        <p class="ag-people"><strong>Panelists</strong> Jeff Frankston (Dept. of War, IBAS), Ross Pedersen (Neros Technologies), Jisoo Chung (HL Mando), Nikhil Kalathil (CMU)</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Riley Thomas</strong> Consultant, McKinsey</li><li><strong>Jeff Frankston</strong> Acting Deputy Assistant Secretary of War, Industrial Base Resilience, Department of War</li><li><strong>Ross Pederson</strong> Co-Founder &amp; CRO, Neros</li><li><strong>Jisoo Chung</strong> Principal, HL Ventures (HL Mando)</li><li><strong>Nikhil Kalathil</strong> Deputy Director of Strategic Initiatives &amp; Research Scientist, CMU</li></ul>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">11:30 AM–12:10 PM</div>
       <div>
         <div class="ag-title">AI Infrastructure in the Age of Great Power Competition — Compute, Energy, and Critical Minerals as Strategic Assets</div>
         <p class="ag-desc">AI has sparked a rapidly intensifying global economic competition over the infrastructure and power for the technology itself. This panel examines the emerging geopolitical and industrial dynamics shaping the AI infrastructure race.</p>
-        <p class="ag-people"><strong>Moderator</strong> Andrew Stiles</p>
-        <p class="ag-people"><strong>Panelists</strong> Chris Kong (Paperjet Ventures), Tom Kruger (AKIN), Richard Steffens (Steffens Provision Inc), Maggie Gray (Shield Capital)</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Andrew Stiles</strong> Manager, Strategy &amp; Transformation, Deloitte Consulting</li><li><strong>Chris Kong</strong> Founder, Managing Partner, Paperjet Ventures</li><li><strong>Tom Kruger</strong> Senior Policy Advisor, AKIN</li><li><strong>Richard Steffens</strong> President, Steffens Provision Inc</li><li><strong>Maggie Gray</strong> Vice President, Shield Capital</li></ul>
       </div>
     </div>
-
     <div class="ag-row minor">
       <div class="ag-time">12:10–1:00 PM</div>
       <div>
         <div class="ag-title">Lunch</div>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">1:00–1:45 PM</div>
       <div>
@@ -257,57 +251,51 @@
           <div class="ag-card">
             <div class="ag-title">Policy Tabletop: Crowding In Capital</div>
             <p class="ag-desc">Financing U.S. reindustrialization using America’s greatest instrument of power — its economic one. We’ll discuss the journey of crafting policies that incentivize us to deploy capital in longer-term, more capital-intensive sectors in order to secure our future.</p>
-            <p class="ag-people">Ivan Shyr (CapZone), Jen Cash (Capitol Advisory), Hebert Limas (Hudson), Leigh Anne Miller (Ripley Decision Advantage), Steve McKee (OSW)</p>
+            <ul class="ag-list"><li><strong>Ivan Shyr</strong> CapZone</li><li><strong>Jen Cash</strong> Capitol Advisory</li><li><strong>Hebert Limas</strong> Hudson</li><li><strong>Leigh Anne Miller</strong> Managing Partner, Ripley Decision Advantage</li><li><strong>Steve McKee</strong> OSW</li></ul>
           </div>
           <div class="ag-card">
             <div class="ag-title">What Are PAEs?</div>
             <p class="ag-desc">Every major weapon system passes through a Program Acquisition Executive (PAE). Under recent acquisition reforms, PAEs now hold greater authority, shorter chains of command, and direct accountability for cost, schedule, and performance. How do they work?</p>
-            <p class="ag-people">Michael Stewart (N86U), Shelly Stoneman (Stone Point Solutions), Pete Modigliani (TBD)</p>
+            <ul class="ag-list"><li><strong>Michael Stewart</strong> N86U</li><li><strong>Shelly Stoneman</strong> Stone Point Solutions</li><li><strong>Pete Modigliani</strong> TBD</li></ul>
           </div>
           <div class="ag-card">
             <div class="ag-title">Scaling Manufacturing</div>
             <p class="ag-desc">Rebuilding America’s industrial base will take more than restoring what was lost. It requires new approaches to how we build, and rethinking supply chains and input materials.</p>
-            <p class="ag-people">Garuth Archan (Ironstead), Mingu Khan (Arris Technologies), Dale Ferrell (Hyundai Robotics), Devon (Bravo Ordnance)</p>
+            <ul class="ag-list"><li><strong>Garuth Archana</strong> Founder &amp; CEO, Ironstead</li><li><strong>Mingu Kang</strong> Founder &amp; CEO, ARIS Technology</li><li><strong>Dale Ferrell</strong> Hyundai Robotics</li><li><strong>Devan Plantura</strong> Founder &amp; CEO, Bravo Ordnance</li></ul>
           </div>
         </div>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">1:45–2:25 PM</div>
       <div>
         <div class="ag-title">A Comparative Look at Industrial Policies Enabling Manufacturing — Asia, Europe, America</div>
         <p class="ag-desc">The U.S. and its allies are using different blends of public finance, industrial policy, and investment controls to strengthen domestic capabilities, reduce dependence on China, and gain long-term strategic advantage.</p>
-        <p class="ag-people"><strong>Moderator</strong> Eric Lo</p>
-        <p class="ag-people"><strong>Panelists</strong> Bogaun Chen (ITRI-Taiwan), Vilijus Samuila (Lithuania), Michael Stroud (Taft)</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Eric Lo</strong> Founder, Managing Partner, Mathison Ventures</li><li><strong>Bogaun Chen</strong> Deputy International Affairs Officer &amp; Director, ITRI-North America</li><li><strong>Vilijus Samuila</strong> Minister Plenipotentiary (Economics, Business, Science and Innovation), Embassy of Lithuania to the USA</li><li><strong>Michael Stroud</strong> Partner, Taft Law</li></ul>
       </div>
     </div>
-
     <div class="ag-row minor">
       <div class="ag-time">2:25–2:40 PM</div>
-      <div><div class="ag-title">Break</div></div>
+      <div>
+        <div class="ag-title">Break</div>
+      </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">2:40–3:20 PM</div>
       <div>
         <div class="ag-title">Concrete and Capital: Funding the Foundation of the Defense Industrial Base</div>
         <p class="ag-desc">Our manufacturing ambitions depend on reliable infrastructure—energy, logistics, utilities, and buildings that make production possible. However, the fastest growing defense companies are often the ones least able to fund their physical expansion. Additionally, the ones that do are either paying for real estate with expensive capital or carrying it on balance sheet inefficiently. Startup financing and infrastructure experts discuss where the chokepoints actually are and what institutional capital needs to see to be a complementary financing partner.</p>
-        <p class="ag-people"><strong>Moderator</strong> Michael Barclift</p>
-        <p class="ag-people"><strong>Panelists</strong> Justin Sperling (Cadry), Susan Gray (Argo), David Willard (Nooks), Rebecca Del Palazzo (DIU)</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Michael Barclift</strong> Director, Strategy &amp; Operations, Hadrian</li><li><strong>Justin Sperling</strong> Founder &amp; Investor, Cadry</li><li><strong>Susan Gray</strong> Founder, Managing Partner, Argo</li><li><strong>David Willard</strong> CEO, Nooks</li><li><strong>Rebecca Del Palazzo</strong> Principal Lead, Classified Infrastructure, DIU</li></ul>
       </div>
     </div>
-
     <div class="ag-row">
       <div class="ag-time">3:20–4:00 PM</div>
       <div>
         <div class="ag-title">Scaling Next-Gen Munitions</div>
         <p class="ag-desc">The modern battlefield demands high-volume, affordable precision to counter attritable systems. Defense startups and primes are innovating using commercial electronics and automotive-style mass production in order to build low-cost weapons that are also lethal. Our panel will discuss the challenges of designing, sourcing parts, and manufacturing low-cost munitions to deploy affordable lethality at scale.</p>
-        <p class="ag-people"><strong>Moderator</strong> Dak Hardwick</p>
-        <p class="ag-people"><strong>Panelists</strong> Skip Arny (AEVEX), James Owen (Fortus Federal), Paul Tilghman (Voyager Space Technologies), Maria Proestou (DASN Budget Policy, Navy), Chad Lemond (Northrop Grumman)</p>
+        <ul class="ag-list"><li><span class="ag-role">Moderator</span><strong>Dak Hardwick</strong> Vice President, International Affairs, AIAA</li><li><strong>Skip Arny</strong> Vice President, AEVEX</li><li><strong>James Owen</strong> CEO, Fortus Federal</li><li><strong>Paul Tilghman</strong> Chief Technology Officer, Voyager Space Technologies</li><li><strong>Maria Proestou</strong> DASN Acquisition Policy and Budget, U.S. Navy</li><li><strong>Chad Lemond</strong> Director of Business Development, Guns Operating Unit, Northrop Grumman</li></ul>
       </div>
     </div>
-
     <div class="ag-row minor">
       <div class="ag-time">4:00 PM</div>
       <div>
@@ -315,7 +303,6 @@
         <p class="ag-people">Ellen Chang (CapZone Group), Michael Langman — Founders &amp; Co-Presidents, Wharton Aerospace</p>
       </div>
     </div>
-
     <div class="ag-row minor">
       <div class="ag-time">4:30 PM onward</div>
       <div>
