@@ -4,456 +4,92 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#10203f">
-<meta name="color-scheme" content="light">
-<meta name="description" content="Live schedule for Wharton Aerospace Ventures 2026.">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="WAV Live">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Wharton Aerospace Ventures 2026 has concluded. Join us at the Wharton Aerospace conference, January 13–14.">
 <link rel="icon" href="https://lh3.googleusercontent.com/d/1I35eaRfs2hZJYACcE9ATrf6QSdMktQGX">
-<link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/d/1I35eaRfs2hZJYACcE9ATrf6QSdMktQGX">
-<title>WAV 2026 Live</title>
+<title>Wharton Aerospace</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&amp;family=JetBrains+Mono:wght@700;800&amp;family=Montserrat:wght@700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700;800&amp;display=swap" rel="stylesheet">
 <style>
-  :root { --navy:#10203f; --ink:#12203f; --red:#c81e3f; --red-soft:#e2687e; --cream:#f5efe4; --muted:rgba(18,32,63,0.62); --line:rgba(18,32,63,0.12); }
-  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
-  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .dot { animation:none; } .bar i, .chev, .toast { transition:none; } }
-  body { margin:0; background:var(--cream); font-family:'Inter',sans-serif; color:var(--ink); overflow-x:hidden; -webkit-font-smoothing:antialiased; padding-bottom:env(safe-area-inset-bottom); }
-  .wrap { max-width:640px; margin:0 auto; padding:0 16px; }
+  :root { --navy:#10203f; --ink:#12203f; --red:#c81e3f; --red-dark:#8f1730; --maroon:#6c1230; --red-soft:#e2687e; --cream:#f5efe4; --muted:rgba(18,32,63,0.72); --line:rgba(18,32,63,0.12); }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--cream); font-family:'Inter',sans-serif; color:var(--ink); overflow-x:hidden; }
+  a { color:var(--red); text-decoration:none; }
+  a:hover { color:var(--red-dark); }
   .mono { font-family:'JetBrains Mono',monospace; }
-  [id] { scroll-margin-top:100px; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  section { padding:clamp(56px,8vw,96px) clamp(16px,5vw,64px); }
+  .eyebrow { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); margin-bottom:16px; }
+  h2 { font-size:clamp(28px,4vw,42px); line-height:1.12; letter-spacing:-0.01em; margin:0 0 20px; font-weight:800; }
+  p { font-size:17px; line-height:1.65; color:var(--muted); margin:0 0 16px; }
 
-  /* top bar */
-  .top { position:sticky; top:0; z-index:20; background:var(--navy); color:#fff; padding-top:env(safe-area-inset-top); }
-  .top .wrap { display:flex; align-items:center; justify-content:space-between; height:52px; }
-  .brand { display:flex; align-items:center; gap:10px; }
-  .brand img { height:26px; background:#fff; border-radius:5px; padding:3px 5px; }
-  .live-tag { font-family:'JetBrains Mono',monospace; font-weight:800; font-size:12px; letter-spacing:0.1em; display:flex; align-items:center; gap:6px; }
-  .dot { width:8px; height:8px; border-radius:50%; background:var(--red); animation:pulse 1.6s infinite; }
-  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(200,30,63,.75)} 70%{box-shadow:0 0 0 9px rgba(200,30,63,0)} 100%{box-shadow:0 0 0 0 rgba(200,30,63,0)} }
-  .clock { font-family:'JetBrains Mono',monospace; font-weight:800; font-size:20px; font-variant-numeric:tabular-nums; text-align:right; line-height:1; }
-  .clock small { display:block; font-size:10px; font-weight:700; letter-spacing:0.1em; color:rgba(255,255,255,.7); margin-top:3px; }
+  nav { display:flex; align-items:center; gap:12px; padding:14px clamp(16px,4vw,48px); background:var(--navy); border-bottom:1px solid rgba(255,255,255,0.08); }
+  nav span { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:14px; letter-spacing:0.06em; color:#fff; text-transform:uppercase; }
 
-  .notice { display:none; background:var(--red); color:#fff; font-weight:600; font-size:14px; line-height:1.4; padding:10px 0; }
-  .notice.show { display:block; }
+  .hero { position:relative; background:var(--navy); overflow:hidden; color:#fff; padding-top:clamp(40px,6vw,72px); }
+  .hero .grid { position:absolute; inset:0; background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 40px); pointer-events:none; }
+  .hero .inner { position:relative; z-index:1; }
+  .hero .kicker { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:clamp(16px,2.4vw,24px); text-transform:uppercase; }
+  .hero .big { font-family:'JetBrains Mono',monospace; font-weight:800; font-size:clamp(34px,6.5vw,76px); line-height:1; text-transform:uppercase; margin-top:6px; }
+  .hero .red { color:var(--red); }
+  .hero p { color:rgba(255,255,255,0.82); margin:16px 0 0; font-size:clamp(16px,1.8vw,19px); }
 
-  /* hero */
-  .hero { background:var(--navy); color:#fff; padding:18px 0 22px; }
-  .kicker { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--red-soft); margin-bottom:8px; }
-  a.now { display:block; color:inherit; text-decoration:none; }
-  .hroom { display:inline-block; font-family:'JetBrains Mono',monospace; font-weight:800; font-size:11px; letter-spacing:.08em; text-transform:uppercase; background:var(--red); color:#fff; padding:2px 7px; border-radius:3px; margin-bottom:8px; }
-  .more { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:12px; letter-spacing:.04em; color:var(--red-soft); margin-top:8px; }
-  .now + .now { margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,.14); }
-  .multi .now h1 { font-size:20px; }
-  .multi .who { font-size:13px; margin-top:6px; }
-  .now h1 { margin:0; font-weight:800; font-size:24px; line-height:1.18; }
-  .meta { font-family:'JetBrains Mono',monospace; font-size:13px; color:rgba(255,255,255,.7); margin-top:8px; display:flex; justify-content:space-between; gap:8px; }
-  .meta b { color:#fff; white-space:nowrap; }
-  .bar { height:5px; background:rgba(255,255,255,.14); border-radius:9px; overflow:hidden; margin-top:10px; }
-  .bar i { display:block; height:100%; background:var(--red); border-radius:9px; transition:width .6s; }
-  .who { margin-top:10px; font-size:14px; line-height:1.5; color:rgba(255,255,255,.72); }
-  .who b { color:#fff; font-weight:600; }
-  .cd { font-family:'JetBrains Mono',monospace; font-weight:800; font-size:44px; line-height:1; font-variant-numeric:tabular-nums; margin:2px 0 8px; }
+  .card { margin-top:clamp(32px,5vw,48px); display:grid; grid-template-columns:auto 1fr; gap:clamp(20px,4vw,40px); align-items:center; background:rgba(16,32,63,0.85); border:1px solid rgba(255,255,255,0.18); border-radius:14px; padding:clamp(22px,4vw,36px); }
+  .card .eyebrow { color:var(--red-soft); }
+  .card h2 { color:#fff; margin-bottom:10px; }
+  .card .cta { margin:0; font-size:17px; color:rgba(255,255,255,0.82); }
+  .card .cta a { color:#fff; font-weight:600; text-decoration:underline; text-decoration-color:var(--red-soft); text-underline-offset:4px; }
+  .card .cta a:hover { color:var(--red-soft); }
+  .date { border:1px solid rgba(255,255,255,0.35); border-radius:10px; padding:18px 22px; text-align:center; min-width:150px; }
+  .date .m { color:var(--red-soft); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:14px; letter-spacing:0.14em; text-transform:uppercase; }
+  .date .d { font-family:'JetBrains Mono',monospace; font-weight:800; font-size:clamp(36px,6vw,52px); line-height:1.05; }
 
-  /* up next */
-  .next { background:#fff; border-bottom:1px solid var(--line); padding:12px 0; }
-  .next .wrap { display:block; }
-  .next .when { font-family:'JetBrains Mono',monospace; font-weight:800; font-size:12px; color:var(--red); letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; }
-  .next .what { font-weight:700; font-size:15px; line-height:1.3; margin-top:4px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .about-sec p { max-width:760px; margin:0; }
 
-  /* quick actions */
-  .actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:12px 16px 0; max-width:640px; margin:0 auto; }
-  .act { display:flex; flex-direction:column; justify-content:center; min-height:56px; padding:10px 14px; border-radius:10px; background:var(--red); color:#fff; text-decoration:none; font-weight:700; font-size:14px; line-height:1.2; }
-  .act small { font-family:'JetBrains Mono',monospace; font-weight:500; font-size:11px; opacity:.8; margin-top:3px; }
-  .act:only-child { grid-column:1 / -1; }
+  footer { background:var(--navy); color:rgba(255,255,255,0.6); padding:24px clamp(16px,5vw,64px); font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.04em; }
 
-  /* sponsors */
-  .sponsors { background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 0 20px; }
-  .sec-label { font-family:'JetBrains Mono',monospace; font-weight:800; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--red); margin:0 0 12px; text-align:center; }
-  .logos { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .logos a { background:var(--cream); border:1px solid var(--line); border-radius:10px; height:76px; display:flex; align-items:center; justify-content:center; padding:14px 18px; text-decoration:none; container-type:inline-size; }
-  .logos a.wide { grid-column:1 / -1; }
-  .logos img { max-height:44px; max-width:100%; object-fit:contain; }
-  .logos .wm { font-family:'Montserrat',sans-serif; font-weight:700; font-size:min(22px,9.5cqi); color:var(--ink); white-space:nowrap; line-height:1; }
-  .thanks { text-align:center; font-size:13px; color:var(--muted); margin:12px 0 0; }
-
-  /* schedule */
-  .sched { padding:20px 0 8px; }
-  .day { font-weight:800; font-size:17px; margin:18px 0 6px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
-  .day:first-child { margin-top:0; }
-  .day small { display:block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:12px; color:var(--red); margin-top:3px; letter-spacing:.04em; }
-  .locnote { font-size:13px; color:var(--muted); margin:0 0 14px; }
-  .locnote b { color:var(--ink); }
-  .locnote a { color:var(--red); font-weight:600; display:inline-block; padding:13px 0; }
-  .detail .desc { margin:0 0 8px; }
-  .ti .rm { display:block; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:11px; letter-spacing:.04em; color:var(--red); margin-top:3px; }
-  .detail a { color:var(--red); text-decoration:none; display:inline-block; padding:4px 0; }
-  .contact { margin-top:22px; padding-top:16px; border-top:1px solid rgba(255,255,255,.12); font-size:13px; color:rgba(255,255,255,.6); }
-  .contact b { display:block; color:#fff; font-size:15px; margin-top:6px; }
-  .contact a { color:var(--red-soft); font-family:'JetBrains Mono',monospace; font-size:13px; text-decoration:none; word-break:break-all; display:inline-block; padding:14px 0; }
-  details.row { border-bottom:1px solid var(--line); border-left:3px solid transparent; }
-  details.row > summary { list-style:none; display:grid; grid-template-columns:62px minmax(0,1fr) 16px; gap:10px; align-items:start; padding:13px 0 13px 10px; cursor:pointer; min-height:48px; }
-  details.row > summary::-webkit-details-marker { display:none; }
-  .t { font-family:'JetBrains Mono',monospace; font-weight:700; font-size:12px; color:var(--red); line-height:1.35; padding-top:2px; }
-  .ti { font-weight:700; font-size:15px; line-height:1.3; }
-  .row.minor .ti { font-weight:500; color:var(--muted); }
-  .chev { color:var(--muted); font-size:12px; padding-top:3px; transition:transform .15s; }
-  details[open] .chev { transform:rotate(90deg); }
-  .nochev .chev { visibility:hidden; }
-  .detail { padding:0 0 14px 82px; font-size:14px; line-height:1.55; color:var(--muted); }
-  .detail b { color:var(--ink); font-weight:600; }
-  .detail b a { color:var(--ink); text-decoration:underline; text-decoration-color:var(--red); text-underline-offset:3px; }
-  .detail .mod { font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:800; letter-spacing:.06em; color:var(--red); margin-right:4px; }
-  .detail div + div { margin-top:3px; }
-  .row.live { background:#fff; border-left-color:var(--red); }
-  .pill { display:inline-block; margin-left:6px; padding:1px 6px; border-radius:3px; background:var(--red); color:#fff; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:800; letter-spacing:.08em; vertical-align:2px; }
-  .pill.o { background:none; color:var(--red); border:1px solid var(--red); }
-  details.earlier { margin:6px 0; }
-  details.earlier > summary { list-style:none; cursor:pointer; padding:15px 0; font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--line); }
-  details.earlier > summary::-webkit-details-marker { display:none; }
-  details.earlier .row { opacity:.72; }
-
-  /* about */
-  .about { background:var(--navy); color:#fff; padding:26px 0 30px; }
-  .about .sec-label { text-align:left; color:var(--red-soft); }
-  .about h2 { margin:0 0 12px; font-weight:800; font-size:22px; line-height:1.25; }
-  .about p { font-size:15px; line-height:1.6; color:rgba(255,255,255,.8); margin:0 0 12px; }
-  .about summary { list-style:none; cursor:pointer; color:var(--red-soft); font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; letter-spacing:.04em; padding:6px 0 12px; min-height:44px; display:flex; align-items:center; }
-  .about summary::-webkit-details-marker { display:none; }
-  .about details[open] summary { display:none; }
-  .lead { color:#fff !important; font-weight:600; font-size:16px !important; margin-top:24px !important; }
-  .stats { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
-  .stats div { background:rgba(255,255,255,.07); border-radius:10px; padding:12px 14px; }
-  .stats b { display:block; font-family:'JetBrains Mono',monospace; font-weight:800; font-size:22px; color:var(--red-soft); margin-bottom:4px; }
-  .stats span { font-size:12.5px; line-height:1.4; color:rgba(255,255,255,.75); }
-  .foot { text-align:center; font-family:'JetBrains Mono',monospace; font-size:11px; color:rgba(255,255,255,.65); padding-top:22px; }
-
-  /* section nav (inside the sticky header) */
-  .tabs { background:var(--navy); border-top:1px solid rgba(255,255,255,.1); display:grid; grid-template-columns:repeat(4,1fr); max-width:720px; margin:0 auto; }
-  .tabs a { display:flex; flex-direction:row; align-items:center; justify-content:center; gap:6px; height:42px; color:rgba(255,255,255,.72); text-decoration:none; font-family:'JetBrains Mono',monospace; font-weight:700; font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
-  .tabs a svg { width:16px; height:16px; flex:none; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
-  .tabs a.on { color:#fff; box-shadow:inset 0 -2px 0 var(--red); }
-
-  .toast { position:fixed; left:50%; bottom:calc(20px + env(safe-area-inset-bottom)); transform:translate(-50%,20px); background:var(--ink); color:#fff; padding:10px 16px; border-radius:8px; font-size:14px; font-weight:600; opacity:0; pointer-events:none; transition:.2s; z-index:40; white-space:nowrap; }
-  .toast.show { opacity:1; transform:translate(-50%,0); }
+  @media (max-width:760px) {
+    .card { grid-template-columns:1fr; }
+    .date { justify-self:start; }
+    }
 </style>
 </head>
 <body>
 
-<header class="top"><div class="wrap">
-  <div class="brand">
-    <img src="https://lh3.googleusercontent.com/d/1I35eaRfs2hZJYACcE9ATrf6QSdMktQGX" alt="Wharton Aerospace">
-    <span class="live-tag"><span class="dot"></span>LIVE</span>
-  </div>
-  <div class="clock"><span id="clock">4:08 PM</span><small>WASHINGTON, D.C.</small></div>
-</div>
-<nav class="tabs" aria-label="Sections">
-  <a href="#now" data-sec="now" class="on"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Now</a>
-  <a href="#schedule" data-sec="schedule"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>Agenda</a>
-  <a href="#sponsors" data-sec="sponsors"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg>Partners</a>
-  <a href="#about" data-sec="about"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v6M12 7.5v.5"></path></svg>About</a>
-</nav></header>
-
-<div class="notice" id="notice"><div class="wrap" id="notice-text"></div></div>
-
-<section class="hero" id="now"><div class="wrap" id="hero"><div class="kicker">Pitch Night starts in</div><div class="cd" data-cd="1792011600000">00:51:40</div><div class="meta"><span>VC Panel: Venturing in Defense — Where Is It Going? · 5:00 PM</span></div></div></section>
-<div class="next" id="next-wrap" style="display: none;"><div class="wrap" id="next"></div></div>
-
-<nav class="actions" aria-label="Resources">
-  <a class="act" id="lnk-resume" href="https://drive.google.com/file/d/1z58OeaZeAFcuAHF69BA2sLhvoueUsiTT/view?usp=sharing" target="_blank" rel="noopener">Volunteer Resume Packet<small>PDF</small></a>
-  <a class="act" id="lnk-people" href="https://docs.google.com/spreadsheets/d/13Q62i8YOr5kIwLHyA37ypWAs90o_yOZO/edit?usp=sharing&amp;ouid=106909775293404097075&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">Participant List<small>Who’s here</small></a>
+<nav>
+  <span>Wharton Aerospace</span>
 </nav>
 
+<section class="hero">
+  <div class="grid"></div>
+  <div class="inner wrap">
+    <div class="kicker">Wharton Aerospace Ventures 2026</div>
+    <div class="big">Has <span class="red">Concluded</span></div>
+    <p>Thank you to everyone who joined us in Washington, D.C. See you next year.</p>
 
-<main class="sched" id="schedule"><div class="wrap"><p class="locnote"><b>Pitch Night Oct 14 · Main Conference Oct 15, 2026<br>Washington, DC · Following AUSA</b><br>Exact location available in your <a href="https://luma.com/c4bu45v8" target="_blank" rel="noopener">Luma registration</a>.</p><div id="sched-body"><div class="day">Wednesday, October 14 · Pitch Night<small>Penthouse Rooftop</small></div><details id="s0" class="row "><summary><span class="t">5:00 PM</span><span class="ti">VC Panel: Venturing in Defense — Where Is It Going?</span><span class="chev">›</span></summary><div class="detail"><p class="desc">Where is the fast-evolving defense technology landscape going? Leading defense tech investors explore strategic investment areas in the next industrial base, while we highlight the rise of startups rebuilding America’s industrial strength through dual-use innovation.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/mikhailgrinberg/" target="_blank" rel="noopener">Mikhail Grinberg</a></b> · Senior Partner, Renaissance Strategic Advisors</div><div><b><a href="https://www.linkedin.com/in/jacob-windle-2196b3109/" target="_blank" rel="noopener">Jake Windle</a></b> · Investor, Harpoon</div><div><b><a href="https://www.linkedin.com/in/alex-lautzenheiser/" target="_blank" rel="noopener">Alex Garcia Lautzenheiser</a></b> · Investor, UP Partners</div><div><b><a href="https://www.linkedin.com/in/sarah-istel-3278ba78/" target="_blank" rel="noopener">Sarah Istel</a></b> · Managing Director, Cerberus Ventures</div><div><b><a href="https://www.linkedin.com/in/sam-spencer-pittman-38b788102/" target="_blank" rel="noopener">Sam Spencer-Pittman</a></b> · Director, Army FUZE</div><div><b><a href="https://www.linkedin.com/in/margarethroth/" target="_blank" rel="noopener">Margaret Roth</a></b> · Principal, Squadra Ventures</div></div></details><details id="s1" class="row "><summary><span class="t">5:45 PM</span><span class="ti">Defense Tech Showcase</span><span class="chev">›</span></summary><div class="detail"><p class="desc">10–12 defense tech companies showcase their company and wares, with deep tech and defense tech demos.</p><div><b>Northstar Photonics</b> · <a href="https://northstarphotonics.com" target="_blank" rel="noopener">northstarphotonics.com</a></div><div><b>Skydweller</b> · <a href="https://skydweller.aero" target="_blank" rel="noopener">skydweller.aero</a></div><div><b>QDIR</b> · <a href="https://qdinfrared.com" target="_blank" rel="noopener">qdinfrared.com</a></div><div><b>Bluescape</b> · <a href="https://bluescape.com" target="_blank" rel="noopener">bluescape.com</a></div><div><b>ARIS Technology</b> · <a href="https://aristechnology.com" target="_blank" rel="noopener">aristechnology.com</a></div><div><b>VoltaSphere</b> · <a href="https://voltaspheregroup.com" target="_blank" rel="noopener">voltaspheregroup.com</a></div><div><b>Orion Edge</b> · <a href="https://orionedgegroup.com" target="_blank" rel="noopener">orionedgegroup.com</a></div><div><b>Bravo Ordnance</b> · <a href="https://warhead.co" target="_blank" rel="noopener">warhead.co</a></div><div><b>Paladin Robotics</b> · <a href="https://paladinrobotics.com" target="_blank" rel="noopener">paladinrobotics.com</a></div><div><b>Finnish Tech Showcase</b></div></div></details><details id="s2" class="row "><summary><span class="t">6:00 PM</span><span class="ti">Networking Dinner</span><span class="chev">›</span></summary><div class="detail"><p class="desc">Networking dinner for attendees alongside the deep tech and defense tech demos.</p></div></details><div class="day">Thursday, October 15 · Main Conference</div><details id="s3" class="row  minor"><summary><span class="t">8:00 AM</span><span class="ti">Arrival &amp; Networking Breakfast</span><span class="chev">›</span></summary><div class="detail"><div>2nd Floor · coffee, tea &amp; continental breakfast</div></div></details><details id="s4" class="row "><summary><span class="t">8:45 AM</span><span class="ti">Opening Remarks</span><span class="chev">›</span></summary><div class="detail"><p class="desc">An overview of the event, a recap of the prior evening’s startup pitches and VC panel, and an introduction to the industrial policy tabletops.</p><div><b><a href="https://www.linkedin.com/in/ellenmchang/" target="_blank" rel="noopener">Ellen Chang</a></b> · Co-Founder, Co-President, Wharton Aerospace</div><div><b><a href="https://www.linkedin.com/in/michaellangman/" target="_blank" rel="noopener">Michael Langman</a></b> · Founder &amp; Co-President, Wharton Aerospace</div></div></details><details id="s5" class="row "><summary><span class="t">9:00 AM</span><span class="ti">Opening Fireside Chat: Dan Magy<span class="pill o">KEYNOTE</span></span><span class="chev">›</span></summary><div class="detail"><p class="desc">A candid conversation on building defense technology for an era defined by speed, adaptability, and resilient supply chains. Firestorm’s factory-in-a-box solution just closed an $82M round.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/heatherjrichman/" target="_blank" rel="noopener">Heather Richman</a></b> · Founder, DIN / DAN</div><div><b><a href="https://www.linkedin.com/in/danmagy/" target="_blank" rel="noopener">Dan Magy</a></b> · Founder/CEO, Firestorm</div></div></details><details id="s6" class="row "><summary><span class="t">9:50 AM</span><span class="ti">Opening Capstone Panel: The U.S. vs. China and the Battle for Global Production Supremacy</span><span class="chev">›</span></summary><div class="detail"><p class="desc">The global geopolitical landscape is defined by a fundamental clash of economic architectures. With the formal implementation of China’s 15th Five-Year Plan (2026–2030), Beijing has pivoted from targeted sector subsidies to a system-wide, state-directed strategy designed to secure absolute technological self-reliance and command “new quality productive forces.” In contrast, the U.S. trade and fiscal strategies seem haphazard. This panel of China, industrial base, and U.S. policy experts will discuss the U.S. market-led, incentive-driven approach contrasted with China’s pervasive state-orchestrated model, exploring how we might create alignment to ensure we secure our economic capacity.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/dan-schneiderman-a789224/" target="_blank" rel="noopener">Daniel Schneiderman</a></b> · Director of Global Policy Programs, Penn Washington</div><div><b><a href="https://www.linkedin.com/in/regina-abrami-1a7269b/" target="_blank" rel="noopener">Regina Abrami</a></b> · Chang Sun Term Professor &amp; Faculty Director, Global Program, Lauder Institute of Management &amp; International Studies, Wharton School of Business</div><div><b><a href="https://www.linkedin.com/in/magliochetti/" target="_blank" rel="noopener">Andy Magliochetti</a></b> · DASN Naval Industrial Base, US Navy</div><div><b><a href="https://www.linkedin.com/in/ronald-epstein-9014a155/" target="_blank" rel="noopener">Ron Epstein</a></b> · Managing Director, Bank of America</div><div><b>John Gallagher</b> · Senior Advisor &amp; Deputy Chief of Staff to the Deputy Secretary of War</div><div><b><a href="https://www.linkedin.com/in/andrewcharlesking/" target="_blank" rel="noopener">Andrew King</a></b> · Founder, Managing Partner, Bastille Ventures</div></div></details><details id="s7" class="row  minor nochev"><summary><span class="t">10:35 AM</span><span class="ti">Break</span><span class="chev">›</span></summary></details><details id="s8" class="row "><summary><span class="t">10:50 AM</span><span class="ti">Cracks in the Supply Chain</span><span class="chev">›</span></summary><div class="detail"><p class="desc">Cracks in the global supply chain are getting harder to ignore, from critical materials and semiconductors to logistics bottlenecks and labor shortages. This panel explores the most urgent vulnerabilities and energizes a discussion on how data, re-shoring, dual-use manufacturing, and new public–private collaboration can build resilience.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/brileyt/" target="_blank" rel="noopener">Riley Thomas</a></b> · Consultant, McKinsey</div><div><b>Jisoo Chung</b> · Partner / Director of Business Development, Higher Life Ventures / HL</div><div><b><a href="https://www.linkedin.com/in/jeffrey-frankston-2630458/" target="_blank" rel="noopener">Jeff Frankston</a></b> · Acting Deputy Assistant Secretary of War, Industrial Base Resilience</div><div><b>Sebastian De Luca</b> · Head of Government Affairs, Neros</div><div><b><a href="https://www.linkedin.com/in/nkalathil/" target="_blank" rel="noopener">Nikhil Kalathil</a></b> · Research Scientist; Critical Technology Initiative Deputy Director of Strategic Initiatives, Carnegie Mellon University</div><div><b>Ilya Levtov</b> · Founder and CEO, Craft.co</div></div></details><details id="s9" class="row "><summary><span class="t">11:30 AM</span><span class="ti">AI Infrastructure in the Age of Great Power Competition — Compute, Energy, and Critical Minerals as Strategic Assets</span><span class="chev">›</span></summary><div class="detail"><p class="desc">AI has sparked a rapidly intensifying global economic competition over the infrastructure and power for the technology itself. This panel examines the emerging geopolitical and industrial dynamics shaping the AI infrastructure race.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/andrew-stiles-73126aa0/" target="_blank" rel="noopener">Andrew Stiles</a></b> · Strategy &amp; Operations, Deloitte Quantum</div><div><b><a href="https://www.linkedin.com/in/christopherjkong/" target="_blank" rel="noopener">Chris Kong</a></b> · GP, PaperJet Ventures</div><div><b><a href="https://www.linkedin.com/in/kruegerthomas/" target="_blank" rel="noopener">Tom Krueger</a></b> · Senior Policy Advisor, Akin</div><div><b><a href="https://www.linkedin.com/in/richard-steffens-jr-5a845a39/" target="_blank" rel="noopener">Richard Steffens</a></b> · Managing Director, TTSE Tech</div><div><b><a href="https://www.linkedin.com/in/marguerite-gray/" target="_blank" rel="noopener">Maggie Gray</a></b> · Vice President, Shield Capital</div></div></details><details id="s10" class="row  minor nochev"><summary><span class="t">12:10 PM</span><span class="ti">Lunch</span><span class="chev">›</span></summary></details><details id="s11" class="row "><summary><span class="t">1:00 PM</span><span class="ti">Breakout · Policy Tabletop: Crowding In Capital<span class="pill o">BREAKOUT</span><small class="rm">The Cabinet</small></span><span class="chev">›</span></summary><div class="detail"><p class="desc">Financing U.S. reindustrialization using America’s greatest instrument of power — its economic one. We’ll discuss the journey of crafting policies that incentivize us to deploy capital in longer-term, more capital-intensive sectors in order to secure our future.</p><div><b><a href="https://www.linkedin.com/in/ivanshyr/" target="_blank" rel="noopener">Ivan Shyr</a></b> · Managing Director, Investments, CapZone Impact Investments</div><div><b><a href="https://www.linkedin.com/in/jennifercash1/" target="_blank" rel="noopener">Jen Cash</a></b> · Managing Partner, Capitol Energy Advocacy</div><div><b><a href="https://www.linkedin.com/in/heberto-limas-villers/" target="_blank" rel="noopener">Heberto Limas</a></b> · Senior Fellow, Bull Moose Project</div><div><b><a href="https://www.linkedin.com/in/leighannemillerengineering/" target="_blank" rel="noopener">Leigh Anne Miller</a></b> · CTO, Ripley Decision Advantage</div><div><b><a href="https://www.linkedin.com/in/steve-mckee-9b8a3891/" target="_blank" rel="noopener">Steve McKee</a></b> · Independent Consultant, Office of the Assistant Secretary of War for Industrial Base Policy</div></div></details><details id="s12" class="row "><summary><span class="t">1:00 PM</span><span class="ti">Breakout · What Are PAEs?<span class="pill o">BREAKOUT</span><small class="rm">The Congress</small></span><span class="chev">›</span></summary><div class="detail"><p class="desc">Every major weapon system passes through a Program Acquisition Executive (PAE). Under recent acquisition reforms, PAEs now hold greater authority, shorter chains of command, and direct accountability for cost, schedule, and performance. How do they work?</p><div><b><a href="https://www.linkedin.com/in/michael-stewart-994b49145/" target="_blank" rel="noopener">Michael Stewart</a></b> · Founder/Principal, N86U</div><div><b><a href="https://www.linkedin.com/in/shelly-oneill-stoneman-a472945/" target="_blank" rel="noopener">Shelly Stoneman</a></b> · CEO, StonePoint Strategies</div><div><b><a href="https://www.linkedin.com/in/petermodigliani/" target="_blank" rel="noopener">Pete Modigliani</a></b> · Co-Founder/CEO, Creative Defense Network</div></div></details><details id="s13" class="row "><summary><span class="t">1:00 PM</span><span class="ti">Breakout · Scaling Manufacturing<span class="pill o">BREAKOUT</span><small class="rm">Main Room</small></span><span class="chev">›</span></summary><div class="detail"><p class="desc">Rebuilding America’s industrial base will take more than restoring what was lost. It requires new approaches to how we build, and rethinking supply chains and input materials.</p><div><b><a href="https://www.linkedin.com/in/garuthacharya/" target="_blank" rel="noopener">Garuth Acharya</a></b> · Founder/CEO, Ironstead</div><div><b><a href="https://www.linkedin.com/in/mingukang/" target="_blank" rel="noopener">Mingu Kang</a></b> · CEO, ARIS Technology (with Hyundai Robotics)</div><div><b><a href="https://www.linkedin.com/in/dale-ferrell-56a463b/" target="_blank" rel="noopener">Dale Ferrell</a></b> · Director, Sales, Hyundai Robotics</div><div><b><a href="https://www.linkedin.com/in/devanplantamura/" target="_blank" rel="noopener">Devan Plantamura</a></b> · Founder/CEO, Bravo Ordnance</div></div></details><details id="s14" class="row "><summary><span class="t">1:45 PM</span><span class="ti">A Comparative Look at Industrial Policies Enabling Manufacturing — Asia, Europe, America</span><span class="chev">›</span></summary><div class="detail"><p class="desc">The U.S. and its allies are using different blends of public finance, industrial policy, and investment controls to strengthen domestic capabilities, reduce dependence on China, and gain long-term strategic advantage.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/ericslo/" target="_blank" rel="noopener">Eric Lo</a></b> · General Partner, Mathison Space</div><div><b><a href="https://www.linkedin.com/in/bogaun-chen-0b96464a/" target="_blank" rel="noopener">BoGaun Chen</a></b> · Deputy International Affairs Officer &amp; Director, ITRI-North America</div><div><b><a href="https://www.linkedin.com/in/vilijus-samuila-5aa17614a/" target="_blank" rel="noopener">Vilijus Samuila</a></b> · Minister Plenipotentiary (Economics, Business, Science and Innovation), Embassy of Lithuania to the USA</div><div><b><a href="https://www.linkedin.com/in/michael-stroud-8952594/" target="_blank" rel="noopener">Michael Stroud</a></b> · Partner, Taft Law</div></div></details><details id="s15" class="row  minor nochev"><summary><span class="t">2:25 PM</span><span class="ti">Break</span><span class="chev">›</span></summary></details><details id="s16" class="row "><summary><span class="t">2:40 PM</span><span class="ti">Concrete and Capital: Funding the Foundation of the Defense Industrial Base</span><span class="chev">›</span></summary><div class="detail"><p class="desc">Our manufacturing ambitions depend on reliable infrastructure—energy, logistics, utilities, and buildings that make production possible. However, the fastest growing defense companies are often the ones least able to fund their physical expansion. Additionally, the ones that do are either paying for real estate with expensive capital or carrying it on balance sheet inefficiently. Startup financing and infrastructure experts discuss where the chokepoints actually are and what institutional capital needs to see to be a complementary financing partner.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/michaelbarclift/" target="_blank" rel="noopener">Michael Barclift</a></b> · Director, Strategy &amp; Operations, Hadrian</div><div><b><a href="https://www.linkedin.com/in/justinsperling/" target="_blank" rel="noopener">Justin Sperling</a></b> · Managing Member, Cadry</div><div><b>Susan Gray</b> · Head of Energy Transition, Argo</div><div><b><a href="https://www.linkedin.com/in/david-willard-311bab1/" target="_blank" rel="noopener">David Willard</a></b> · CEO, Nooks</div><div><b><a href="https://www.linkedin.com/in/rebeccadelpalazzo/" target="_blank" rel="noopener">Rebecca Del Palazzo</a></b> · Principal Lead, Classified Infrastructure, DIU</div></div></details><details id="s17" class="row "><summary><span class="t">3:20 PM</span><span class="ti">Scaling Next-Gen Munitions</span><span class="chev">›</span></summary><div class="detail"><p class="desc">The modern battlefield demands high-volume, affordable precision to counter attritable systems. Defense startups and primes are innovating using commercial electronics and automotive-style mass production in order to build low-cost weapons that are also lethal. Our panel will discuss the challenges of designing, sourcing parts, and manufacturing low-cost munitions to deploy affordable lethality at scale.</p><div><span class="mod">MOD</span><b><a href="https://www.linkedin.com/in/dakhardwick/" target="_blank" rel="noopener">Dak Hardwick</a></b> · Vice President, International Affairs, AIAA</div><div><b><a href="https://www.linkedin.com/in/craig-anders-15935076/" target="_blank" rel="noopener">Craig Anders</a></b> · SVP Growth, AEVEX</div><div><b><a href="https://www.linkedin.com/in/james-c-owen-35590a9a/" target="_blank" rel="noopener">James Owen</a></b> · Chief Executive Officer, Fortus Federal Technologies</div><div><b><a href="https://www.linkedin.com/in/paul-tilghman-4b5293179/" target="_blank" rel="noopener">Paul Tilghman</a></b> · Chief Technology Officer, Voyager Space Technologies</div><div><b><a href="https://www.linkedin.com/in/mariaproestou/" target="_blank" rel="noopener">Maria Proestou</a></b> · DASN Acquisition Policy and Budget, US Navy</div><div><b>Jon Ferko</b> · Senior Director, C2 &amp; Weapon Systems Division, Northrop Grumman</div></div></details><details id="s18" class="row  minor"><summary><span class="t">4:00 PM</span><span class="ti">Wrap-Up</span><span class="chev">›</span></summary><div class="detail"><div><b><a href="https://www.linkedin.com/in/ellenmchang/" target="_blank" rel="noopener">Ellen Chang</a></b> · Co-Founder, Co-President, Wharton Aerospace</div><div><b><a href="https://www.linkedin.com/in/michaellangman/" target="_blank" rel="noopener">Michael Langman</a></b> · Founder &amp; Co-President, Wharton Aerospace</div></div></details><details id="s19" class="row  minor"><summary><span class="t">4:30 PM</span><span class="ti">Post-Event Informal Happy Hour</span><span class="chev">›</span></summary><div class="detail"><div>Free State · 501B G St NW, Washington, DC 20001</div></div></details></div></div></main>
-
-<section class="sponsors" id="sponsors"><div class="wrap">
-  <h2 class="sec-label">Our Partners</h2>
-  <p class="thanks" style="margin:0 0 14px;text-align:center;">This gathering is made possible with the support of these partner organizations.</p>
-  <div class="logos">
-    <a href="https://www.commonmission.us" target="_blank" rel="noopener"><span class="wm">COMMON MISSION</span></a>
-    <a href="https://www.rsadvisors.com" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/d/1IM6ew5VXSpjOcMoJy-l3CIBe0KHDV7xB" alt="Renaissance Strategic Advisors logo"></a>
-    <a href="https://www.taftlaw.com" target="_blank" rel="noopener" class="wide"><img src="https://lh3.googleusercontent.com/d/1cIYj1nnZwvKV6Fw13mWttVg0mw41KIOR" alt="Taft Law logo"></a>
-    <a href="https://voyagertechnologies.com" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/d/1t2zrjtGv3QJPcuQ94v9UKDQSgGoZz3wQ" alt="Voyager Technologies logo"></a>
-    <a href="https://www.neros.tech" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/d/1eCIBU7y6eqx4uTtlFVYbr5KahDHwQzm4" alt="Neros logo"></a>
+    <div class="card">
+      <div class="date">
+        <div class="m">January</div>
+        <div class="d">13–14</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:8px;">Up Next</div>
+        <h2>Wharton Aerospace Conference</h2>
+        <p class="cta">Interested? Email <a href="mailto:Michael.Langman.wg98@wharton.upenn.edu?subject=Wharton%20Aerospace%20%E2%80%94%20January%20Conference">Michael Langman</a>.</p>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="about" id="about"><div class="wrap">
-  <h2 class="sec-label">2026 Theme</h2>
-  <h2>Forge Forward: Scaling Our Industrial Foundation</h2>
-  <p>Made in China 2025 — China’s industrial strategy that provided a foundation for its rise — is now being integrated into China’s broader 15th Five-Year Plan (2026–2030). China’s industrial strategy now touches almost every major sector in the economy and their underlying supply chains and advances technological self-reliance.</p>
-  <details>
-    <summary>Read the full theme +</summary>
-    <p>China has moved beyond simply chasing American innovation. It is pursuing a different theory of power, one that places production, scale, and control of critical inputs at the center of its national strategy. China has recognized to a greater degree that controlling lower level supply chain inputs controls production scale up and capacity. Our innovation capacity has suffered along with manufacturing moving offshore.</p>
-    <p>But America is a quick study. Increasingly Congress is calling for and approving budget allocation to shore up our weakened capabilities in the sourcing and processing of raw materials, rare earths and the lowest levels of supply chains. But, public capital is insufficient. America’s innovation and economic prowess is unmatched; we need to tap into these strengths and harness private capital as only the American system can.</p>
-    <p>Wharton Aerospace Ventures theme this year places these issues at center stage. We not only bring experts, founders, investors addressing these issues, but also have added a Market Crafting layer, putting innovations in industrial policy at the heart of all our discussions.</p>
-  </details>
-
-  <h2 class="sec-label" style="margin-top:26px;">Why Attend</h2>
-  <p class="lead" style="margin-top:0 !important;">A by-invitation, Chatham House Rule conference convening founders, funders, and policymakers across the commercial aerospace and defense innovation base.</p>
-  <div class="stats">
-    <div><b>2,000+</b><span>Contacts cultivated over 20+ years, spanning A&amp;D industry titans, venture/startup, policy, and government</span></div>
-    <div><b>200+</b><span>Senior executives, investors &amp; government leaders in the room</span></div>
-    <div><b>15th</b><span>Annual edition of Wharton Aerospace Ventures, launched 2012</span></div>
-    <div><b>2004</b><span>Wharton Aerospace founded, 20+ year aerospace &amp; defense network</span></div>
+<section class="about-sec">
+  <div class="wrap">
+    <div class="eyebrow">About Wharton Aerospace</div>
+    <p>Founded in 2004, Wharton Aerospace has built a network of more than 2,000 titans of the aerospace and defense industry over two decades. Twice a year, members of that network gather at Wharton Aerospace and Wharton Aerospace Ventures, long a bedrock of the industry.</p>
   </div>
-  <div class="contact">Questions about the program or your registration?<b>Ellen Chang · Co-Founder, Wharton Aerospace</b><a href="mailto:Ellen.Chang.wg98@wharton.upenn.edu">Ellen.Chang.wg98@wharton.upenn.edu</a></div>
-  <div class="foot">© 2026 Wharton Aerospace Community · Washington, D.C. · October 14–15, 2026</div>
-</div></section>
+</section>
 
-<div class="toast" id="toast"></div>
+<footer>© 2026 Wharton Aerospace Community</footer>
 
-<script>
-/* ====================================================================
-   DAY-OF CONTROLS — edit these, commit, and Netlify redeploys in ~30s.
-   ==================================================================== */
-
-// Button links. Paste a URL between the quotes. Until then the button shows "coming soon".
-var RESUME_PACKET_URL = "https://drive.google.com/file/d/1z58OeaZeAFcuAHF69BA2sLhvoueUsiTT/view?usp=sharing";
-var PARTICIPANT_LIST_URL = "https://docs.google.com/spreadsheets/d/13Q62i8YOr5kIwLHyA37ypWAs90o_yOZO/edit?usp=sharing&ouid=106909775293404097075&rtpof=true&sd=true";
-
-// Banner shown at the top of the page. Leave "" to hide.
-var NOTICE = "";
-
-// Running late? Set minutes behind schedule (e.g. 10). Shifts every
-// session that hasn't ended yet and shows a "running X min behind" note.
-var DELAY_MIN = 0;
-
-/* ====================================================================
-   SCHEDULE — all times Eastern (EDT, -04:00).
-   ==================================================================== */
-var DAYS = {
-  "2026-10-14": "Wednesday, October 14 · Pitch Night",
-  "2026-10-15": "Thursday, October 15 · Main Conference"
-};
-var DAY_VENUE = { "2026-10-14": "Penthouse Rooftop" };
-
-var SESSIONS = [
-  {"day": "2026-10-14", "start": "17:00", "end": "17:45", "title": "VC Panel: Venturing in Defense — Where Is It Going?", "desc": "Where is the fast-evolving defense technology landscape going? Leading defense tech investors explore strategic investment areas in the next industrial base, while we highlight the rise of startups rebuilding America’s industrial strength through dual-use innovation.", "people": [["Moderator", "Mikhail Grinberg", "Senior Partner, Renaissance Strategic Advisors", "https://www.linkedin.com/in/mikhailgrinberg/"], ["", "Jake Windle", "Investor, Harpoon", "https://www.linkedin.com/in/jacob-windle-2196b3109/"], ["", "Alex Garcia Lautzenheiser", "Investor, UP Partners", "https://www.linkedin.com/in/alex-lautzenheiser/"], ["", "Sarah Istel", "Managing Director, Cerberus Ventures", "https://www.linkedin.com/in/sarah-istel-3278ba78/"], ["", "Sam Spencer-Pittman", "Director, Army FUZE", "https://www.linkedin.com/in/sam-spencer-pittman-38b788102/"], ["", "Margaret Roth", "Principal, Squadra Ventures", "https://www.linkedin.com/in/margarethroth/"]]},
-  {"day": "2026-10-14", "start": "17:45", "end": "22:00", "title": "Defense Tech Showcase", "desc": "10–12 defense tech companies showcase their company and wares, with deep tech and defense tech demos.", "people": [["", "Northstar Photonics", "northstarphotonics.com", "", "https://northstarphotonics.com"], ["", "Skydweller", "skydweller.aero", "", "https://skydweller.aero"], ["", "QDIR", "qdinfrared.com", "", "https://qdinfrared.com"], ["", "Bluescape", "bluescape.com", "", "https://bluescape.com"], ["", "ARIS Technology", "aristechnology.com", "", "https://aristechnology.com"], ["", "VoltaSphere", "voltaspheregroup.com", "", "https://voltaspheregroup.com"], ["", "Orion Edge", "orionedgegroup.com", "", "https://orionedgegroup.com"], ["", "Bravo Ordnance", "warhead.co", "", "https://warhead.co"], ["", "Paladin Robotics", "paladinrobotics.com", "", "https://paladinrobotics.com"], ["", "Finnish Tech Showcase", ""]], "openEnd": true},
-  {"day": "2026-10-14", "start": "18:00", "end": "22:00", "title": "Networking Dinner", "desc": "Networking dinner for attendees alongside the deep tech and defense tech demos.", "openEnd": true},
-  {"day": "2026-10-15", "start": "08:00", "end": "08:45", "title": "Arrival & Networking Breakfast", "where": "2nd Floor · coffee, tea & continental breakfast", "minor": true},
-  {"day": "2026-10-15", "start": "08:45", "end": "09:00", "title": "Opening Remarks", "desc": "An overview of the event, a recap of the prior evening’s startup pitches and VC panel, and an introduction to the industrial policy tabletops.", "people": [["", "Ellen Chang", "Co-Founder, Co-President, Wharton Aerospace", "https://www.linkedin.com/in/ellenmchang/"], ["", "Michael Langman", "Founder & Co-President, Wharton Aerospace", "https://www.linkedin.com/in/michaellangman/"]]},
-  {"day": "2026-10-15", "start": "09:00", "end": "09:20", "title": "Opening Fireside Chat: Dan Magy", "tag": "Keynote", "desc": "A candid conversation on building defense technology for an era defined by speed, adaptability, and resilient supply chains. Firestorm’s factory-in-a-box solution just closed an $82M round.", "people": [["Moderator", "Heather Richman", "Founder, DIN / DAN", "https://www.linkedin.com/in/heatherjrichman/"], ["", "Dan Magy", "Founder/CEO, Firestorm", "https://www.linkedin.com/in/danmagy/"]]},
-  // Removed for now; uncomment to restore.
-  // {"day": "2026-10-15", "start": "09:20", "end": "09:50", "title": "From the Front", "tag": "Keynote", "people": [["Moderator", "Ellen Chang", "Co-Founder, Co-President, Wharton Aerospace", "https://www.linkedin.com/in/ellenmchang/"], ["", "Col. Jason Kim", "Security Cooperation Officer, American Institute in Taiwan"]]},
-  {"day": "2026-10-15", "start": "09:50", "end": "10:35", "title": "Opening Capstone Panel: The U.S. vs. China and the Battle for Global Production Supremacy", "desc": "The global geopolitical landscape is defined by a fundamental clash of economic architectures. With the formal implementation of China’s 15th Five-Year Plan (2026–2030), Beijing has pivoted from targeted sector subsidies to a system-wide, state-directed strategy designed to secure absolute technological self-reliance and command “new quality productive forces.” In contrast, the U.S. trade and fiscal strategies seem haphazard. This panel of China, industrial base, and U.S. policy experts will discuss the U.S. market-led, incentive-driven approach contrasted with China’s pervasive state-orchestrated model, exploring how we might create alignment to ensure we secure our economic capacity.", "people": [["Moderator", "Daniel Schneiderman", "Director of Global Policy Programs, Penn Washington", "https://www.linkedin.com/in/dan-schneiderman-a789224/"], ["", "Regina Abrami", "Chang Sun Term Professor & Faculty Director, Global Program, Lauder Institute of Management & International Studies, Wharton School of Business", "https://www.linkedin.com/in/regina-abrami-1a7269b/"], ["", "Andy Magliochetti", "DASN Naval Industrial Base, US Navy", "https://www.linkedin.com/in/magliochetti/"], ["", "Ron Epstein", "Managing Director, Bank of America", "https://www.linkedin.com/in/ronald-epstein-9014a155/"], ["", "John Gallagher", "Senior Advisor & Deputy Chief of Staff to the Deputy Secretary of War"], ["", "Andrew King", "Founder, Managing Partner, Bastille Ventures", "https://www.linkedin.com/in/andrewcharlesking/"]]},
-  {"day": "2026-10-15", "start": "10:35", "end": "10:50", "title": "Break", "minor": true},
-  {"day": "2026-10-15", "start": "10:50", "end": "11:30", "title": "Cracks in the Supply Chain", "desc": "Cracks in the global supply chain are getting harder to ignore, from critical materials and semiconductors to logistics bottlenecks and labor shortages. This panel explores the most urgent vulnerabilities and energizes a discussion on how data, re-shoring, dual-use manufacturing, and new public–private collaboration can build resilience.", "people": [["Moderator", "Riley Thomas", "Consultant, McKinsey", "https://www.linkedin.com/in/brileyt/"], ["", "Jisoo Chung", "Partner / Director of Business Development, Higher Life Ventures / HL"], ["", "Jeff Frankston", "Acting Deputy Assistant Secretary of War, Industrial Base Resilience", "https://www.linkedin.com/in/jeffrey-frankston-2630458/"], ["", "Sebastian De Luca", "Head of Government Affairs, Neros"], ["", "Nikhil Kalathil", "Research Scientist; Critical Technology Initiative Deputy Director of Strategic Initiatives, Carnegie Mellon University", "https://www.linkedin.com/in/nkalathil/"], ["", "Ilya Levtov", "Founder and CEO, Craft.co"]]},
-  {"day": "2026-10-15", "start": "11:30", "end": "12:10", "title": "AI Infrastructure in the Age of Great Power Competition — Compute, Energy, and Critical Minerals as Strategic Assets", "desc": "AI has sparked a rapidly intensifying global economic competition over the infrastructure and power for the technology itself. This panel examines the emerging geopolitical and industrial dynamics shaping the AI infrastructure race.", "people": [["Moderator", "Andrew Stiles", "Strategy & Operations, Deloitte Quantum", "https://www.linkedin.com/in/andrew-stiles-73126aa0/"], ["", "Chris Kong", "GP, PaperJet Ventures", "https://www.linkedin.com/in/christopherjkong/"], ["", "Tom Krueger", "Senior Policy Advisor, Akin", "https://www.linkedin.com/in/kruegerthomas/"], ["", "Richard Steffens", "Managing Director, TTSE Tech", "https://www.linkedin.com/in/richard-steffens-jr-5a845a39/"], ["", "Maggie Gray", "Vice President, Shield Capital", "https://www.linkedin.com/in/marguerite-gray/"]]},
-  {"day": "2026-10-15", "start": "12:10", "end": "13:00", "title": "Lunch", "minor": true},
-  {"day": "2026-10-15", "start": "13:00", "end": "13:45", "title": "Breakout · Policy Tabletop: Crowding In Capital", "room": "The Cabinet", "tag": "Breakout", "desc": "Financing U.S. reindustrialization using America’s greatest instrument of power — its economic one. We’ll discuss the journey of crafting policies that incentivize us to deploy capital in longer-term, more capital-intensive sectors in order to secure our future.", "people": [["", "Ivan Shyr", "Managing Director, Investments, CapZone Impact Investments", "https://www.linkedin.com/in/ivanshyr/"], ["", "Jen Cash", "Managing Partner, Capitol Energy Advocacy", "https://www.linkedin.com/in/jennifercash1/"], ["", "Heberto Limas", "Senior Fellow, Bull Moose Project", "https://www.linkedin.com/in/heberto-limas-villers/"], ["", "Leigh Anne Miller", "CTO, Ripley Decision Advantage", "https://www.linkedin.com/in/leighannemillerengineering/"], ["", "Steve McKee", "Independent Consultant, Office of the Assistant Secretary of War for Industrial Base Policy", "https://www.linkedin.com/in/steve-mckee-9b8a3891/"]]},
-  {"day": "2026-10-15", "start": "13:00", "end": "13:45", "title": "Breakout · What Are PAEs?", "room": "The Congress", "tag": "Breakout", "desc": "Every major weapon system passes through a Program Acquisition Executive (PAE). Under recent acquisition reforms, PAEs now hold greater authority, shorter chains of command, and direct accountability for cost, schedule, and performance. How do they work?", "people": [["", "Michael Stewart", "Founder/Principal, N86U", "https://www.linkedin.com/in/michael-stewart-994b49145/"], ["", "Shelly Stoneman", "CEO, StonePoint Strategies", "https://www.linkedin.com/in/shelly-oneill-stoneman-a472945/"], ["", "Pete Modigliani", "Co-Founder/CEO, Creative Defense Network", "https://www.linkedin.com/in/petermodigliani/"]]},
-  {"day": "2026-10-15", "start": "13:00", "end": "13:45", "title": "Breakout · Scaling Manufacturing", "room": "Main Room", "tag": "Breakout", "desc": "Rebuilding America’s industrial base will take more than restoring what was lost. It requires new approaches to how we build, and rethinking supply chains and input materials.", "people": [["", "Garuth Acharya", "Founder/CEO, Ironstead", "https://www.linkedin.com/in/garuthacharya/"], ["", "Mingu Kang", "CEO, ARIS Technology (with Hyundai Robotics)", "https://www.linkedin.com/in/mingukang/"], ["", "Dale Ferrell", "Director, Sales, Hyundai Robotics", "https://www.linkedin.com/in/dale-ferrell-56a463b/"], ["", "Devan Plantamura", "Founder/CEO, Bravo Ordnance", "https://www.linkedin.com/in/devanplantamura/"]]},
-  {"day": "2026-10-15", "start": "13:45", "end": "14:25", "title": "A Comparative Look at Industrial Policies Enabling Manufacturing — Asia, Europe, America", "desc": "The U.S. and its allies are using different blends of public finance, industrial policy, and investment controls to strengthen domestic capabilities, reduce dependence on China, and gain long-term strategic advantage.", "people": [["Moderator", "Eric Lo", "General Partner, Mathison Space", "https://www.linkedin.com/in/ericslo/"], ["", "BoGaun Chen", "Deputy International Affairs Officer & Director, ITRI-North America", "https://www.linkedin.com/in/bogaun-chen-0b96464a/"], ["", "Vilijus Samuila", "Minister Plenipotentiary (Economics, Business, Science and Innovation), Embassy of Lithuania to the USA", "https://www.linkedin.com/in/vilijus-samuila-5aa17614a/"], ["", "Michael Stroud", "Partner, Taft Law", "https://www.linkedin.com/in/michael-stroud-8952594/"]]},
-  {"day": "2026-10-15", "start": "14:25", "end": "14:40", "title": "Break", "minor": true},
-  {"day": "2026-10-15", "start": "14:40", "end": "15:20", "title": "Concrete and Capital: Funding the Foundation of the Defense Industrial Base", "desc": "Our manufacturing ambitions depend on reliable infrastructure—energy, logistics, utilities, and buildings that make production possible. However, the fastest growing defense companies are often the ones least able to fund their physical expansion. Additionally, the ones that do are either paying for real estate with expensive capital or carrying it on balance sheet inefficiently. Startup financing and infrastructure experts discuss where the chokepoints actually are and what institutional capital needs to see to be a complementary financing partner.", "people": [["Moderator", "Michael Barclift", "Director, Strategy & Operations, Hadrian", "https://www.linkedin.com/in/michaelbarclift/"], ["", "Justin Sperling", "Managing Member, Cadry", "https://www.linkedin.com/in/justinsperling/"], ["", "Susan Gray", "Head of Energy Transition, Argo"], ["", "David Willard", "CEO, Nooks", "https://www.linkedin.com/in/david-willard-311bab1/"], ["", "Rebecca Del Palazzo", "Principal Lead, Classified Infrastructure, DIU", "https://www.linkedin.com/in/rebeccadelpalazzo/"]]},
-  {"day": "2026-10-15", "start": "15:20", "end": "16:00", "title": "Scaling Next-Gen Munitions", "desc": "The modern battlefield demands high-volume, affordable precision to counter attritable systems. Defense startups and primes are innovating using commercial electronics and automotive-style mass production in order to build low-cost weapons that are also lethal. Our panel will discuss the challenges of designing, sourcing parts, and manufacturing low-cost munitions to deploy affordable lethality at scale.", "people": [["Moderator", "Dak Hardwick", "Vice President, International Affairs, AIAA", "https://www.linkedin.com/in/dakhardwick/"], ["", "Craig Anders", "SVP Growth, AEVEX", "https://www.linkedin.com/in/craig-anders-15935076/"], ["", "James Owen", "Chief Executive Officer, Fortus Federal Technologies", "https://www.linkedin.com/in/james-c-owen-35590a9a/"], ["", "Paul Tilghman", "Chief Technology Officer, Voyager Space Technologies", "https://www.linkedin.com/in/paul-tilghman-4b5293179/"], ["", "Maria Proestou", "DASN Acquisition Policy and Budget, US Navy", "https://www.linkedin.com/in/mariaproestou/"], ["", "Jon Ferko", "Senior Director, C2 & Weapon Systems Division, Northrop Grumman"]]},
-  {"day": "2026-10-15", "start": "16:00", "end": "16:30", "title": "Wrap-Up", "people": [["", "Ellen Chang", "Co-Founder, Co-President, Wharton Aerospace", "https://www.linkedin.com/in/ellenmchang/"], ["", "Michael Langman", "Founder & Co-President, Wharton Aerospace", "https://www.linkedin.com/in/michaellangman/"]], "minor": true},
-  {"day": "2026-10-15", "start": "16:30", "end": "21:00", "title": "Post-Event Informal Happy Hour", "where": "Free State · 501B G St NW, Washington, DC 20001", "minor": true, "openEnd": true}
-];
-
-/* ==================================================================== */
-
-var TZ = "America/New_York";
-var OFFSET = "-04:00"; // EDT in October
-
-SESSIONS.forEach(function (s) {
-  s.s = new Date(s.day + "T" + s.start + ":00" + OFFSET).getTime();
-  s.e = new Date(s.day + "T" + s.end + ":00" + OFFSET).getTime();
-});
-
-// Testing: append ?t=2026-10-15T11:05 to the URL to preview any moment.
-var params = new URLSearchParams(location.search);
-var fakeStart = params.get("t") ? new Date(params.get("t") + ":00" + OFFSET).getTime() : null;
-var loadedAt = Date.now();
-function now() { return fakeStart ? fakeStart + (Date.now() - loadedAt) : Date.now(); }
-
-function shifted(s, n) {
-  // Delay applies to anything that hasn't (originally) ended yet.
-  var d = DELAY_MIN * 60000;
-  if (!d || s.e + d <= n) return { s: s.s, e: s.e };
-  return { s: s.s + d, e: s.e + d };
-}
-
-var fmtClock = new Intl.DateTimeFormat("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit" });
-function fmt(ms) { return fmtClock.format(new Date(ms)); }
-function esc(x) { return String(x).replace(/[&<>"]/g, function (c) { return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]; }); }
-function range(t, s) { return fmt(t.s) + "–" + (s.openEnd ? "late" : fmt(t.e)); }
-function mins(ms) {
-  var m = Math.max(0, Math.ceil(ms / 60000));
-  if (m < 60) return m + " min";
-  var h = Math.floor(m / 60), r = m % 60;
-  return h + " hr" + (r ? " " + r + " min" : "");
-}
-function countdown(ms) {
-  var s = Math.max(0, Math.floor(ms / 1000));
-  var d = Math.floor(s / 86400); s %= 86400;
-  var h = Math.floor(s / 3600); s %= 3600;
-  var m = Math.floor(s / 60); s %= 60;
-  var pad = function (x) { return (x < 10 ? "0" : "") + x; };
-  return (d ? d + "d " : "") + pad(h) + ":" + pad(m) + ":" + pad(s);
-}
-
-
-// One-line speaker summary, e.g. "Riley Thomas (mod), Jeff Frankston, +3"
-function whoShort(s) {
-  if (!s.people) return s.where ? esc(s.where) : "";
-  var out = s.people.slice(0, 3).map(function (p) { return "<b>" + esc(p[1]) + "</b>" + (p[0] ? " (mod)" : ""); });
-  var more = s.people.length - 3;
-  return out.join(", ") + (more > 0 ? " +" + more + " more" : "");
-}
-function link(url, label) {
-  return url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + label + "</a>" : label;
-}
-function detailHtml(s) {
-  var h = (s.desc ? '<p class="desc">' + esc(s.desc) + "</p>" : "");
-  if (s.people) h += s.people.map(function (p) {
-    return "<div>" + (p[0] ? '<span class="mod">MOD</span>' : "") + "<b>" + link(p[3], esc(p[1])) + "</b>" + (p[2] ? " · " + link(p[4], esc(p[2])) : "") + "</div>";
-  }).join("");
-  else if (s.where) h += "<div>" + esc(s.where) + "</div>";
-  return h;
-}
-
-// Button links: real link if set, otherwise the button is hidden.
-var toastTimer;
-function toast(msg) {
-  var el = document.getElementById("toast");
-  el.textContent = msg; el.classList.add("show");
-  clearTimeout(toastTimer); toastTimer = setTimeout(function () { el.classList.remove("show"); }, 1800);
-}
-[["lnk-resume", RESUME_PACKET_URL, "Resume packet"], ["lnk-people", PARTICIPANT_LIST_URL, "Participant list"]].forEach(function (l) {
-  var a = document.getElementById(l[0]);
-  if (l[1]) { a.href = l[1]; return; }
-  a.remove();
-});
-
-var lastKey = null;
-
-function render() {
-  var n = now();
-  document.getElementById("clock").textContent = fmt(n);
-
-  var noticeText = NOTICE || (DELAY_MIN ? "Running about " + DELAY_MIN + " min behind — times are adjusted." : "");
-  document.getElementById("notice").classList.toggle("show", !!noticeText);
-  document.getElementById("notice-text").textContent = noticeText;
-
-  var times = SESSIONS.map(function (s) { return shifted(s, n); });
-  var live = [], upcoming = [], past = [];
-  SESSIONS.forEach(function (s, i) {
-    var t = times[i];
-    if (n >= t.s && n < t.e) live.push(i);
-    else if (n < t.s) upcoming.push(i);
-    else past.push(i);
-  });
-
-  var key = live.join(",") + "|" + upcoming.join(",") + "|" + DELAY_MIN;
-  if (key !== lastKey) { lastKey = key; build(n, times, live, upcoming, past); }
-
-  // Per-second updates of the dynamic bits only (keeps expanded rows open).
-  Array.prototype.forEach.call(document.querySelectorAll("[data-end]"), function (el) {
-    el.textContent = "ends in " + mins(+el.getAttribute("data-end") - n);
-  });
-  Array.prototype.forEach.call(document.querySelectorAll("[data-bar]"), function (el) {
-    var p = el.getAttribute("data-bar").split(",");
-    el.style.width = Math.min(100, Math.max(0, (n - p[0]) / (p[1] - p[0]) * 100)).toFixed(1) + "%";
-  });
-  Array.prototype.forEach.call(document.querySelectorAll("[data-cd]"), function (el) {
-    el.textContent = countdown(+el.getAttribute("data-cd") - n);
-  });
-  Array.prototype.forEach.call(document.querySelectorAll("[data-in]"), function (el) {
-    el.textContent = "in " + mins(+el.getAttribute("data-in") - n);
-  });
-}
-
-var openLive = true;
-function rowHtml(s, i, times, state) {
-  var t = times[i];
-  var body = detailHtml(s);
-  var pill = state === "live" ? '<span class="pill">LIVE</span>' : (s.tag ? '<span class="pill o">' + esc(s.tag.toUpperCase()) + "</span>" : "");
-  return '<details id="s' + i + '" class="row ' + state + (s.minor ? " minor" : "") + (body ? "" : " nochev") + '"' + (state === "live" && body && openLive ? " open" : "") + ">" +
-    '<summary><span class="t">' + fmt(t.s) + '</span><span class="ti">' + esc(s.title) + pill + (s.room ? '<small class="rm">' + esc(s.room) + "</small>" : "") + '</span><span class="chev">›</span></summary>' +
-    (body ? '<div class="detail">' + body + "</div>" : "") + "</details>";
-}
-
-function build(n, times, live, upcoming, past) {
-  // HERO
-  var hero = document.getElementById("hero");
-  if (live.length) {
-    hero.classList.toggle("multi", live.length > 1);
-    hero.innerHTML = '<div class="kicker">' + (live.length > 1 ? "Now · " + live.length + " concurrent sessions" : "Happening now") + "</div>" +
-      live.map(function (i) {
-        var s = SESSIONS[i], t = times[i];
-        return '<a class="now" href="#s' + i + '">' + (s.room ? '<div class="hroom">' + esc(s.room) + "</div>" : "") + "<h1>" + esc(s.title.replace(/^Breakout · /, "")) + "</h1>" +
-          '<div class="meta"><span>' + fmt(t.s) + "–" + (s.openEnd ? "late" : fmt(t.e)) + "</span>" +
-          (s.openEnd ? "" : '<b data-end="' + t.e + '"></b>') + "</div>" +
-          (s.openEnd ? "" : '<div class="bar"><i data-bar="' + t.s + "," + t.e + '"></i></div>') +
-          '<div class="who">' + whoShort(s) + '</div><div class="more">Details ›</div></a>';
-      }).join("");
-  } else if (upcoming.length) {
-    var ns = SESSIONS[upcoming[0]], nt = times[upcoming[0]];
-    var label = n < times[0].s ? "Pitch Night starts in" : (upcoming[0] > 0 && SESSIONS[upcoming[0] - 1].day !== ns.day ? "Main conference starts in" : "Starting in");
-    hero.innerHTML = '<div class="kicker">' + label + '</div><div class="cd" data-cd="' + nt.s + '"></div>' +
-      '<div class="meta"><span>' + esc(ns.title) + " · " + fmt(nt.s) + "</span></div>";
-  } else {
-    hero.innerHTML = '<div class="kicker">That’s a wrap</div><div class="now"><h1>Thank you for joining Wharton Aerospace Ventures 2026.</h1><div class="who">See you next year.</div></div>';
-  }
-
-  // UP NEXT (only when something is live and more is coming)
-  var nw = document.getElementById("next-wrap");
-  if (live.length && upcoming.length) {
-    var first = times[upcoming[0]].s;
-    var group = upcoming.filter(function (i) { return times[i].s === first; });
-    document.getElementById("next").innerHTML = '<div class="when">Next · ' + fmt(first) + ' · <span data-in="' + first + '"></span></div>' +
-      '<div class="what">' + group.map(function (i) { return esc(SESSIONS[i].title.replace(/^Breakout · /, "")); }).join(" / ") + "</div>";
-    nw.style.display = "";
-  } else nw.style.display = "none";
-
-  openLive = live.length === 1;
-  // AGENDA: hide finished days, fold finished sessions into "Earlier"
-  var activeDays = {};
-  SESSIONS.forEach(function (s, i) { if (times[i].e > n) activeDays[s.day] = true; });
-  var anyActive = Object.keys(activeDays).length > 0;
-  var html = "", curDay = "", earlier = [];
-  function flush() { if (earlier.length) { html += '<details class="earlier"><summary>Earlier · ' + earlier.length + " ▾</summary>" + earlier.join("") + "</details>"; earlier = []; } }
-  SESSIONS.forEach(function (s, i) {
-    if (anyActive && !activeDays[s.day]) return;
-    if (s.day !== curDay) { flush(); curDay = s.day; html += '<div class="day">' + esc(DAYS[s.day]) + (DAY_VENUE[s.day] ? "<small>" + esc(DAY_VENUE[s.day]) + "</small>" : "") + "</div>"; }
-    var state = live.indexOf(i) >= 0 ? "live" : (upcoming.indexOf(i) >= 0 ? "" : "past");
-    var r = rowHtml(s, i, times, state);
-    if (state === "past" && anyActive) earlier.push(r); else { flush(); html += r; }
-  });
-  flush();
-  document.getElementById("sched-body").innerHTML = html;
-}
-
-if ("serviceWorker" in navigator && location.protocol !== "file:") navigator.serviceWorker.register("sw.js").catch(function () {});
-render();
-setInterval(function () { if (!document.hidden) render(); }, 1000);
-document.addEventListener("visibilitychange", function () { if (!document.hidden) render(); });
-
-// Tapping a live session in the hero opens its row in the agenda.
-document.getElementById("hero").addEventListener("click", function (e) {
-  var a = e.target.closest("a.now"); if (!a) return;
-  var row = document.getElementById(a.getAttribute("href").slice(1));
-  if (row) row.open = true;
-});
-
-// Highlight the nav tab for the section currently on screen.
-var secs = ["now", "schedule", "sponsors", "about"]; // page order
-function onScroll() {
-  var y = window.scrollY + 120, cur = "now";
-  secs.forEach(function (id) { var el = document.getElementById(id); if (el && el.offsetTop <= y) cur = id; });
-  if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) cur = "about";
-  Array.prototype.forEach.call(document.querySelectorAll(".tabs a"), function (a) { a.classList.toggle("on", a.getAttribute("data-sec") === cur); });
-}
-window.addEventListener("scroll", onScroll, { passive: true });
-onScroll();
-</script>
 
 
 </body></html>
